@@ -3480,6 +3480,7 @@ __metadata:
     postcss: "npm:^8"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    tailwind-merge: "npm:^2.5.5"
     tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5"
   languageName: unknown
@@ -3995,6 +3996,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 10c0/6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^2.5.5":
+  version: 2.5.5
+  resolution: "tailwind-merge@npm:2.5.5"
+  checksum: 10c0/32614dd2b4ddd4fab070d5ec569e6da00e2b34269b9ac2f2ff16733cef29a076c8e2210fbfc1904d7983a8fdb6b3e63d18ca117645f21b12ca7bcf8fe3507241
   languageName: node
   linkType: hard
 
