@@ -7,7 +7,6 @@ export const intro = {
   linkedinUrl:
     "https://www.linkedin.com/in/noppawat-chochaipantawong-659180214",
   githubUrl: "https://github.com/Noppawat3939",
-  location: "bangkok thailand",
 };
 
 export const technologies = {
@@ -62,12 +61,17 @@ export const technologies = {
 
 export const workExperiences = [
   {
-    hide: true,
+    hide: !true,
     isFullTime: true,
     position: "Software Engineer",
     company: "Remobie Technologies Co., Ltd.",
     companyUrl: "https://www.remobie.com",
-    details: ["Integrate 3rd-party services: Samsung Trade-Plus"], // job descriptions
+    details: [
+      "Design, develop and maintain core website and mobile applications using Next.js, Node.js and Expo, managing over 100k orders for store, admin and end-users.",
+      "Develop API services for partners.",
+      "Integrate 3rd-party services: Samsung Trade-Plus, Line Notifify.",
+      "Help review code and suggest best practices to improve it.",
+    ],
     periods: {
       start: { year: 2024, month: "Feb" },
       end: { year: null, month: null, current: true },
@@ -77,9 +81,9 @@ export const workExperiences = [
     isFullTime: true,
     position: "Frontend Developer",
     company: "Magic Box Solutions",
-    companyUrl: "https://www.magicboxsolution.com/?lang=th",
+    companyUrl: "https://www.magicboxsolution.com",
     details: [
-      "Developed cross-platform web and mobile applications using Next.js, React, and React Native.",
+      "Developed cross-platform website and mobile applications using Next.js, React, and React Native.",
       "Collaborated with designers, backend developers, QA and  project manager teams to deliver high-quality products.",
       "Stayed up-to-date with the latest frontend technologies and trends.",
       "Actively shared frontend knowledge and best practices with team members to foster knowledge growth.",
@@ -91,7 +95,7 @@ export const workExperiences = [
   },
   {
     isFullTime: true,
-    position: "Fellow (Cohort 6)",
+    position: "Fellow",
     company: "Teach For Thailand",
     companyUrl: "https://www.teachforthailand.org",
     details: [
@@ -108,7 +112,7 @@ export const workExperiences = [
     company: "Refinn International Dot Com Co., Ltd.",
     companyUrl: "https://www.refinn.com",
     details: [
-      "Wrote an article about home loans personal loan car loan and refinancing to support SEO",
+      "Wrote an article about home loans personal loan car loan and refinancing to support SEO.",
     ],
     periods: {
       start: { year: 2021, month: "Apr" },
@@ -121,8 +125,8 @@ export const workExperiences = [
     company: "Teach For Thailand",
     companyUrl: "https://www.teachforthailand.org",
     details: [
-      "Contacted and coordinated Teach for Thailand Leadership Program (Fellow Cohort7) applications with the candidate selection team.",
-      "Co-created and produced marketing videos on the Teach for Thailand Facebook page, to recruit teachers to the campaign",
+      "Contacted and coordinated Teach for Thailand Leadership Program (Fellow cohort7) applications with the candidate selection team.",
+      "Co-created and produced marketing videos on the Teach for Thailand Facebook page, to recruit teachers to the campaign.",
     ],
     periods: {
       start: { year: 2020, month: "Mar" },
@@ -151,12 +155,23 @@ export const projects = [
       server: "https://github.com/Noppawat3939/job-backend",
     },
   },
+  {
+    name: "JSON Generator",
+    description:
+      "Generate fake JSON data and convert typescript interfaces from JSON.",
+    repository: { client: "https://github.com/Noppawat3939/json-generator" },
+    url: "https://json-generator-dev.vercel.app",
+  },
 ];
 
 export const language = [
   {
+    name: "Thai",
+    details: ["speaking (fluient)", "writing (fluient)"],
+  },
+  {
     name: "English",
-    details: ["Speaking (intermidiate)", "Writing (intermidiate)"],
+    details: ["speaking (intermidiate)", "writing (intermidiate)"],
   },
 ];
 

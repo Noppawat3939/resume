@@ -3,6 +3,7 @@ import {
   ContentIntro as Intro,
   ContentSkill as Skills,
   ContentWork as Works,
+  ContentProject as Project,
   ContentWrapper as Wrapper,
 } from "@/components";
 
@@ -17,6 +18,7 @@ export default function MainPage() {
           title="work experiences"
           content={<Works />}
         />
+        <Wrapper about="projects" title="projects" content={<Project />} />
         <Wrapper about="education" title="education" content={<Education />} />
       </div>
     </div>
