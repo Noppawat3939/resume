@@ -46,7 +46,7 @@ export default function ContentIntro() {
   return (
     <section
       aria-details="introduce_content"
-      className="flex flex-col space-y-4 max-md:space-y-3 max-sm:space-y-2"
+      className="flex flex-col space-y-6 max-md:space-y-4 max-sm:space-y-2 max-sm:mb-2"
     >
       <h1
         aria-label="full_name"

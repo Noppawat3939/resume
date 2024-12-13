@@ -56,7 +56,7 @@ export default function ContentWork() {
               {details.map((detail, i) => (
                 <li
                   key={`detail-w-${i}`}
-                  className="max-md:text-sm max-sm:text-[9px] max-sm:leading-[14px]"
+                  className="max-w-[90%] max-md:text-sm max-sm:text-[9px] max-sm:leading-[14px] max-sm:max-w-[95%]"
                 >
                   {detail}
                 </li>

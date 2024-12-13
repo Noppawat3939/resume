@@ -27,15 +27,18 @@ export default function ContentSkill() {
       label: "Database and ORM",
       details: cs(
         tech.database,
-        tech.objectDataModeling,
-        tech.objectRelationalMapping
+        tech.objectRelationalMapping,
+        tech.objectDataModeling
       ),
     },
     {
       label: "Others",
       details: cs(tech.others, tech.container, tech.design, tech.guiTools),
     },
-    { label: "Languages", details: lang.map(({ details }) => details) },
+    {
+      label: "Languages",
+      details: lang.map((item) => `${item.name} - ${item.details.join(" ")}`),
+    },
   ];
 
   return (
