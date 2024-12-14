@@ -67,7 +67,7 @@ export const workExperiences = [
     company: "Remobie Technologies Co., Ltd.",
     companyUrl: "https://www.remobie.com",
     details: [
-      "Design, develop and maintain core website and mobile applications using Next.js, Node.js and Expo, managing over 100k orders for store, admin and end-users.",
+      "Design, develop and maintain core website and mobile applications using Next.js, Node.js and Expo, managing over 100k orders for stores, staffs and end-users.",
       "Develop API services for partners.",
       "Integrate 3rd-party services: Samsung Trade-Plus, Line Notifify.",
       "Help review code and suggest best practices to improve it.",
