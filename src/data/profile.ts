@@ -66,9 +66,9 @@ export const workExperiences = [
     company: "Remobie Technologies Co., Ltd.",
     companyUrl: "https://www.remobie.com",
     details: [
-      "Develop and maintain internal web applications including Trade-in and internal system using Next.js (v11, v9 and v14) and Node.js, optimizing workflows and delivering a seamless user experience.",
-      "Design and develop a member system in LINE LIFF using Next.js 14 and Node.js, enabling seamless user interactions within the LINE platform.",
-      "Revamp the company’s primary website, enhancing the frontend with Next.js (v14) and Node.js, enabling multi-locale support, improving SEO, and elevating user experience.",
+      "Develop and maintain internal web applications including Trade-in and internal system using Next.js and Node.js, optimizing workflows and delivering a seamless user experience.",
+      "Design and develop a member system in LINE LIFF using Next.js and Node.js, enabling seamless user interactions within the LINE platform.",
+      "Revamp the company primary website, enhancing the frontend with Next.js and Node.js, enabling multi-locale support, improving SEO, and elevating user experience.",
       "Design, build, and maintain APIs using Node.js, Sequelize, and PostgreSQL, serving internal platforms and partner integrations.",
       "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring seamless connectivity and functionality.",
       "Review code and provide feedback, promoting best practices and improving code quality across the team.",
