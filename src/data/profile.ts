@@ -61,16 +61,17 @@ export const technologies = {
 
 export const workExperiences = [
   {
-    hide: !true,
     isFullTime: true,
     position: "Software Engineer",
     company: "Remobie Technologies Co., Ltd.",
     companyUrl: "https://www.remobie.com",
     details: [
-      "Design, develop and maintain core website and mobile applications using Next.js, Node.js and Expo, managing over 100k orders for stores, staffs and end-users.",
-      "Develop API services for partners.",
-      "Integrate 3rd-party services: Samsung Trade-Plus, Line Notifify.",
-      "Help review code and suggest best practices to improve it.",
+      "Develop and maintain internal web applications including Trade-in and internal system using Next.js (v11, v9 and v14) and Node.js, optimizing workflows and delivering a seamless user experience.",
+      "Design and develop a member system in LINE LIFF using Next.js 14 and Node.js, enabling seamless user interactions within the LINE platform.",
+      "Revamp the company’s primary website, enhancing the frontend with Next.js (v14) and Node.js, enabling multi-locale support, improving SEO, and elevating user experience.",
+      "Design, build, and maintain APIs using Node.js, Sequelize, and PostgreSQL, serving internal platforms and partner integrations.",
+      "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring seamless connectivity and functionality.",
+      "Review code and provide feedback, promoting best practices and improving code quality across the team.",
     ],
     periods: {
       start: { year: 2024, month: "Feb" },
@@ -125,8 +126,8 @@ export const workExperiences = [
     company: "Teach For Thailand",
     companyUrl: "https://www.teachforthailand.org",
     details: [
-      "Contacted and coordinated Teach for Thailand Leadership Program (Fellow cohort7) applications with the candidate selection team.",
-      "Co-created and produced marketing videos on the Teach for Thailand Facebook page, to recruit teachers to the campaign.",
+      "Contacted and coordinated candidate for Leadership Program (cohort7).",
+      "Co-created and produced marketing videos on the facebook page.",
     ],
     periods: {
       start: { year: 2020, month: "Mar" },
