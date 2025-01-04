@@ -69,7 +69,7 @@ export const workExperiences = [
       "Develop and maintain internal web applications including Trade-in and internal system using Next.js and Node.js, optimizing workflows and delivering a seamless user experience.",
       "Design and develop a member system in LINE LIFF using Next.js and Node.js, enabling seamless user interactions within the LINE platform.",
       "Revamp the company primary website, enhancing the frontend with Next.js and Node.js, enabling multi-locale support, improving SEO, and elevating user experience.",
-      "Design, build, and maintain APIs using Node.js, Sequelize, and PostgreSQL, serving internal platforms and partner integrations.",
+      "Design, develop, and maintain APIs using Node.js, Sequelize, and PostgreSQL, serving internal platforms and partner integrations.",
       "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring seamless connectivity and functionality.",
       "Review code and provide feedback, promoting best practices and improving code quality across the team.",
     ],
@@ -96,7 +96,7 @@ export const workExperiences = [
   },
   {
     isFullTime: true,
-    position: "Fellow",
+    position: "Fellow (cohort 6)",
     company: "Teach For Thailand",
     companyUrl: "https://www.teachforthailand.org",
     details: [
@@ -126,7 +126,7 @@ export const workExperiences = [
     company: "Teach For Thailand",
     companyUrl: "https://www.teachforthailand.org",
     details: [
-      "Contacted and coordinated candidate for Leadership Program (cohort7).",
+      "Contacted and coordinated candidate for Leadership Program (cohort 7).",
       "Co-created and produced marketing videos on the facebook page.",
     ],
     periods: {
@@ -137,6 +137,14 @@ export const workExperiences = [
 ];
 
 export const projects = [
+  {
+    name: "HEIC image convert service",
+    description: "API service for convert heic image url to png or jpeg",
+    stacks: { server: ["Express"] },
+    repository: {
+      server: "https://github.com/Noppawat3939/heic-image-service",
+    },
+  },
   {
     name: "Job",
     description: "Search and apply jobs",
