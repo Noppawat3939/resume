@@ -69,7 +69,7 @@ export const workExperiences = [
       "Develop and maintain internal web applications including Trade-in and Admin system using Next.js and Node.js, optimizing workflows and delivering a seamless user experience.",
       "Design and develop a member system in LINE LIFF using Next.js and Node.js, enabling seamless user interactions within the LINE platform.",
       "Revamp the company primary website, enhancing the frontend with Next.js and Node.js, enabling multi-locale support, improving SEO, and elevating user experience.",
-      "Design, develop, and maintain APIs using Node.js, Sequelize, and PostgreSQL, serving internal platforms and partner integrations.",
+      "Design, develop, and maintain APIs using Node.js, Sequelize, Nestjs, TypeORM and PostgreSQL for serving internal platforms and partner integrations.",
       "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring seamless connectivity and functionality.",
       "Implement end-to-end (E2E) tesing for critical application workflows to ensure seamless functionality and improve overall software quality.",
       "Review code and provide feedback, promoting best practices and improving code quality across the team.",
