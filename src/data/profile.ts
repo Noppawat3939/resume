@@ -72,7 +72,7 @@ export const workExperiences = [
       "Design, develop, and maintain APIs using Node.js, Sequelize, Nestjs, TypeORM, Firebase (Real Time database) and PostgreSQL for serving internal platforms and partner integrations.",
       "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring seamless connectivity and functionality.",
       "Implement end-to-end (E2E) tesing for critical application workflows to ensure seamless functionality and improve overall software quality.",
-      "Collaborated with DevOps on load testing using k6 to evaluate system performance and optimize scalability",
+      "Collaborate with DevOps on load testing using k6 to evaluate system performance and optimize scalability",
       "Review code and provide feedback, promoting best practices and improving code quality across the team.",
     ],
     periods: {
