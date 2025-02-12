@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "bump-version": "npm version patch --no-git-tag-version & git add package.json package-lock.json"
   },
   "dependencies": {
     "next": "15.1.0",
