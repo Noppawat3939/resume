@@ -66,6 +66,7 @@ export const workExperiences = [
     company: "Remobie Technologies Co., Ltd.",
     companyUrl: "https://www.remobie.com",
     details: [
+      "Design and develop API for service center website using Nestjs, TypeORM and Postgresql.",
       "Develop and maintain internal web applications including Trade-in and Admin system using Next.js and Node.js, optimizing workflows and delivering a seamless user experience.",
       "Design and develop a member system in LINE LIFF using Next.js and Node.js, enabling seamless user interactions within the LINE platform.",
       "Revamp the company primary website, enhancing the frontend with Next.js and Node.js, enabling multi-locale support, improving SEO, and elevating user experience.",
