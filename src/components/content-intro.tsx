@@ -13,14 +13,12 @@ const { intro } = d;
 export default function ContentIntro() {
   const contacts: IContact[] = [
     {
-      key: "email",
-      props: { href: `mailto:${intro.email}`, children: intro.email },
-    },
-    {
-      key: "phone",
+      key: "github",
       props: {
-        href: `tel:${intro.phone}`,
-        children: `+66 ${intro.phone.slice(1)}`,
+        href: intro.githubUrl,
+        target: "_blank",
+        rel: "noreferrer nofollow",
+        children: "github.com",
       },
     },
     {
@@ -33,12 +31,14 @@ export default function ContentIntro() {
       },
     },
     {
-      key: "github",
+      key: "email",
+      props: { href: `mailto:${intro.email}`, children: intro.email },
+    },
+    {
+      key: "phone",
       props: {
-        href: intro.githubUrl,
-        target: "_blank",
-        rel: "noreferrer nofollow",
-        children: "github.com",
+        href: `tel:${intro.phone}`,
+        children: `+66 ${intro.phone.slice(1)}`,
       },
     },
   ];
@@ -64,6 +64,12 @@ export default function ContentIntro() {
           />
         ))}
       </section>
+      <p
+        aria-label="introduce"
+        className="max-md:text-sm max-sm:text-[10px] max-md:py-3 max-sm:leading-4"
+      >
+        {intro.introduce}
+      </p>
     </section>
   );
 }

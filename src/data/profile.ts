@@ -7,6 +7,11 @@ export const intro = {
   linkedinUrl:
     "https://www.linkedin.com/in/noppawat-chochaipantawong-659180214",
   githubUrl: "https://github.com/Noppawat3939",
+  introduce: `
+  Software Engineer with ${
+    new Date().getFullYear() - 2022
+  } years of experience, specializing in frontend development using Next.js, React, and TypeScript. Proficient in creating intuitive user interfaces and seamless experiences across web and mobile platforms. Currently expanding backend expertise with NestJS, Node.js, and PostgreSQL to build scalable, full-featured applications. Seeking a role to grow as a well-rounded engineer and contribute to impactful products.
+  `,
 };
 
 export const technologies = {
@@ -67,7 +72,7 @@ export const workExperiences = [
     companyUrl: "https://www.remobie.com",
     details: [
       "Design and implement backend architecture for a Service-Center System, using NestJS, TypeORM, and PostgreSQL to deliver scalable and maintainable services.",
-      "Developed and maintained website applications, including the Trade-in and Admin System, using Next.js, Node.js, Sequelize, Firebase (Realtime DB) and PostgreSQL.",
+      "Develop and maintain website applications, including the Trade-in and Admin System, using Next.js, Node.js, Sequelize, Firebase (Realtime DB) and PostgreSQL.",
       "Design and implement a LINE LIFF-based Member System using Next.js and Node.js, enabling smooth user authentication and interaction directly within the LINE platform.",
       "Revampe the company’s primary website, improving SEO, multi-locale support, and overall performance using Next.js and Node.js.",
       "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring secure, stable, and seamless communication between platforms.",
