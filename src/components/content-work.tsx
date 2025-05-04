@@ -11,14 +11,7 @@ export default function ContentWork() {
     >
       {works.map(
         (
-          {
-            periods: { start, end },
-            position,
-            details,
-            companyUrl,
-            company,
-            isFullTime,
-          },
+          { periods: { start, end }, position, details, companyUrl, company },
           i
         ) => (
           <div
@@ -27,30 +20,26 @@ export default function ContentWork() {
           >
             <header
               aria-label="work-header"
-              className="flex justify-between items-end"
+              className="flex justify-between items-end max-sm:items-center"
             >
-              <h3
-                aria-label="position"
-                className="font-semibold max-md:text-sm max-sm:text-xs max-sm:font-medium max-sm:leading-[10px]"
-              >
-                {`${position}${!isFullTime ? " (internship)" : ""}`}
-              </h3>
+              <div className="font-semibold flex space-x-1 items-baseline mb-1 max-md:text-sm max-sm:font-medium max-sm:text-[10px]">
+                <Link
+                  rel="noreferrer nofollow"
+                  target="_blank"
+                  href={companyUrl}
+                >
+                  {company}
+                </Link>
+                <p>|</p>
+                <p>{position}</p>
+              </div>
               <p
-                className="text-sm max-sm:text-[9px] max-sm:leading-3"
+                className="text-sm max-sm:text-[8px] max-sm:leading-3"
                 aria-label="periods"
               >{`${start.month} ${start.year} - ${
-                end.current ? "Current" : `${end.month} ${end.year}`
+                end.current ? "Present" : `${end.month} ${end.year}`
               }`}</p>
             </header>
-            <Link
-              aria-label="company_name"
-              href={companyUrl}
-              rel="noreferrer nofollow"
-              target="_blank"
-              className="text-sm text-gray-900/50 max-sm:text-[9px] max-sm:leading-3"
-            >
-              {company}
-            </Link>
             {details.map((detail, i) => (
               <li
                 key={`detail-w-${i}`}

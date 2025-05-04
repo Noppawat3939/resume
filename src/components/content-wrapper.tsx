@@ -15,8 +15,8 @@ export default function ContentWrapepr({
 
   return (
     <Suspense>
-      <section aria-details={about}>
-        <div className="flex border-b py-1 mb-1">
+      <section aria-details={about} className="py-2">
+        <div className="flex border-b py-1 mb-1 max-sm:mb-2">
           <h2
             aria-label={title.trim().toLowerCase()}
             className="uppercase font-semibold text-[22px] max-md:text-lg max-sm:text-[10px] max-sm:leading-[14px]"

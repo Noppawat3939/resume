@@ -38,7 +38,7 @@ export default function ContentProject() {
                 {description}
               </span>
             </li>
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 max-sm:text-[8px]">
               {client && <NextLink href={client}>{"client"}</NextLink>}
               {server && <NextLink href={server}>{"server"}</NextLink>}
               {url && <NextLink href={url}>{"demo"}</NextLink>}

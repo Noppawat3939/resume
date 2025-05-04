@@ -69,15 +69,16 @@ export const workExperiences = [
     isFullTime: true,
     position: "Software Engineer",
     company: "Remobie Technologies Co., Ltd.",
-    companyUrl: "https://www.remobie.com",
+    companyUrl: "https://th.remobie.com",
     details: [
-      "Design and implement backend architecture for a Service-Center System, using NestJS, TypeORM, and PostgreSQL to deliver scalable and maintainable services.",
-      "Develop and maintain website applications, including the Trade-in and Admin System, using Next.js, Node.js, Sequelize, Firebase (Realtime DB) and PostgreSQL.",
-      "Design and implement a LINE LIFF-based Member System using Next.js and Node.js, enabling smooth user authentication and interaction directly within the LINE platform.",
-      "Revampe the company’s primary website, improving SEO, multi-locale support, and overall performance using Next.js and Node.js.",
-      "Integrate third-party services, including Samsung Trade-Plus and LINE Notify, ensuring secure, stable, and seamless communication between platforms.",
-      "Implement E2E testing for critical application workflows, increasing test coverage and improving overall software quality.",
-      "Collaborate with DevOps teams to conduct load testing using k6, identifying and addressing performance bottlenecks under stress.",
+      "Develop RESTful APIs for Service-Center to manage parts for Samsung product repair using Nestjs, TypeORM and Postgresql.",
+      "Develop and maintain Trade-in service are Trade-in and Admin for manage orders system using Next.js, Node.js (Express.js), Sequelize, Firebase (Realtime DB) and Postgresql.",
+      "Design, develop and maintain company's website, improving SEO, multi-locale support and partner campaign support using Next.js",
+      "Design and develop Trade-in member a LINE LIFF-based for point of member using Next.js",
+      "Develop RESTful APIs for third-party services including Samsung Trade-Plus, OPPO and LINE Notify ensuring secure, stable, and seamless communication between platforms.",
+      "Develop a Trade-in application from a Trade-in website with Expo and publish it on both iOS and Android stores.",
+      "Implement e2e testing for critical application workflows, increasing test coverage and improving overall software quality.",
+      "Collaborate with DevOps teams to conduct load testing server and database using k6.",
       "Conduct code reviews and mentorship, promoting clean code practices and maintaining code quality across the team.",
     ],
     periods: {
@@ -153,7 +154,7 @@ export const projects = [
     },
   },
   {
-    name: "Job",
+    name: "Job search",
     description: "Search and apply jobs",
     stacks: {
       client: ["Next.js", "TanStack Query", "Tailwind CSS", "Zustand"],
@@ -172,7 +173,7 @@ export const projects = [
     },
   },
   {
-    name: "JSON Generator",
+    name: "JSON generator",
     description:
       "Generate fake JSON data and convert typescript interfaces from JSON.",
     repository: { client: "https://github.com/Noppawat3939/json-generator" },
