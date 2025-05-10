@@ -22,7 +22,7 @@ export default function ContentWork() {
               aria-label="work-header"
               className="flex justify-between items-end max-sm:items-center"
             >
-              <div className="font-semibold flex space-x-1 items-baseline mb-1 max-md:text-sm max-sm:font-medium max-sm:text-[10px]">
+              <div className="font-semibold flex space-x-1 items-baseline mb-1 max-md:text-sm max-sm:text-[10px]">
                 <Link
                   rel="noreferrer nofollow"
                   target="_blank"
