@@ -72,13 +72,13 @@ export const workExperiences = [
     companyUrl: "https://th.remobie.com",
     details: [
       "Design and develop RESTful APIs for Service-Center to manage parts for Samsung product repair using Nestjs, TypeORM and Postgresql.",
-      "Develop and maintain Trade-in service are Trade-in and Admin for manage orders system using Next.js, Node.js (Express.js), Sequelize, Firebase (Realtime DB) and Postgresql.",
+      "Develop and maintain Trade-in service are Trade-in and Admin for manage orders system using Next.js, Node.js (Express.js), Sequelize, Firebase (Realtime Database) and Postgresql.",
       "Design, develop and maintain company's website, improving SEO, multi-locale support and partner campaign support using Next.js",
       "Design and develop Trade-in member a LINE LIFF-based for point of member using Next.js",
-      "Develop RESTful APIs for third-party services including Samsung Trade-Plus, OPPO and LINE Notify ensuring secure, stable, and seamless communication between platforms.",
-      "Develop a Trade-in application from a Trade-in website with Expo and publish it on both iOS and Android stores.",
+      "Develop RESTful APIs for third-party services ensuring secure, stable, and seamless communication between platforms.",
+      "Develop a Trade-in mobile application from a Trade-in website with Expo and publish it on both iOS and Android stores.",
       "Implement e2e testing for critical application workflows, increasing test coverage and improving overall software quality.",
-      "Collaborate with DevOps teams to conduct load testing server and database using k6.",
+      "Collaborate with DevOps teams to conduct load testing server and database using k6 before campaign lauch.",
       "Conduct code reviews and mentorship, promoting clean code practices and maintaining code quality across the team.",
     ],
     periods: {

@@ -5,7 +5,6 @@ import {
   ContentIntro as Intro,
   ContentSkill as Skills,
   ContentWork as Works,
-  ContentProject as Project,
 } from "@/components";
 import { Suspense, lazy } from "react";
 import { usePDF } from "react-to-pdf";
@@ -28,7 +27,6 @@ export default function MainPage() {
             title="work experiences"
             content={<Works />}
           />
-          <Wrapper about="projects" title="projects" content={<Project />} />
           <Wrapper about="skills" title="skills" content={<Skills />} />
           <Wrapper
             about="education"
