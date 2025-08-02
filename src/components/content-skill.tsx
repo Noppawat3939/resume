@@ -27,8 +27,8 @@ export default function ContentSkill() {
       label: "Database and ORM",
       details: cs(
         tech.database,
-        tech.objectRelationalMapping,
-        tech.objectDataModeling
+        tech.objectDataModeling,
+        tech.objectRelationalMapping
       ),
     },
     {

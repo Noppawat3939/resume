@@ -13,6 +13,17 @@ const { intro } = d;
 export default function ContentIntro() {
   const contacts: IContact[] = [
     {
+      key: "email",
+      props: { href: `mailto:${intro.email}`, children: intro.email },
+    },
+    {
+      key: "phone",
+      props: {
+        href: `tel:${intro.phone}`,
+        children: `(+66) ${intro.phone.slice(1)}`,
+      },
+    },
+    {
       key: "github",
       props: {
         href: intro.githubUrl,
@@ -28,17 +39,6 @@ export default function ContentIntro() {
         href: intro.linkedinUrl,
         rel: "noreferrer nofollow",
         children: "linkedin.com",
-      },
-    },
-    {
-      key: "email",
-      props: { href: `mailto:${intro.email}`, children: intro.email },
-    },
-    {
-      key: "phone",
-      props: {
-        href: `tel:${intro.phone}`,
-        children: `+66 ${intro.phone.slice(1)}`,
       },
     },
   ];

@@ -1,3 +1,6 @@
+const startedDeveloperInYears = 2022;
+const exp = new Date().getFullYear() - startedDeveloperInYears;
+
 export const intro = {
   firstName: "noppawat",
   lastName: "chochaipantawong",
@@ -8,9 +11,7 @@ export const intro = {
     "https://www.linkedin.com/in/noppawat-chochaipantawong-659180214",
   githubUrl: "https://github.com/Noppawat3939",
   introduce: `
-  Software Engineer with ${
-    new Date().getFullYear() - 2022
-  } years of experience, specializing in frontend development using Next.js, React, and TypeScript. Proficient in creating intuitive user interfaces and seamless experiences across web and mobile platforms. Currently expanding backend expertise with NestJS, Node.js, and PostgreSQL to build scalable, full-featured applications. Seeking a role to grow as a well-rounded engineer and contribute to impactful products.
+  Software Engineer with ${exp} years of experience working with JavaScript and TypeScript, focused on designing and developing features, fixing issues, and delivering user-focused solutions. I’m passionate about using technology to solve real-world problems and creating products that make a meaningful impact.
   `,
 };
 
@@ -28,6 +29,7 @@ export const technologies = {
     { name: "HTML" },
     { name: "CSS" },
     { name: "Less CSS" },
+    { name: "Go" },
   ],
   frameworkProgramming: [
     { name: "Next.js" },
@@ -35,21 +37,18 @@ export const technologies = {
     { name: "Expo" },
     { name: "Express" },
     { name: "NestJS" },
+    { name: "Fiber" },
   ],
   javascriptLibrary: [{ name: "React" }, { name: "Socket.IO" }],
   cssFramework: [{ name: "Tailwind CSS" }],
   cssLibrary: [{ name: "Ant Design" }, { name: "NextUI" }],
-  database: [
-    { name: "PostgreSQL" },
-    { name: "MongoDB" },
-    { name: "MySQL" },
-    { name: "Redis" },
-  ],
+  database: [{ name: "PostgreSQL" }, { name: "MongoDB" }, { name: "Redis" }],
   objectDataModeling: [{ name: "Mongoose" }],
   objectRelationalMapping: [
     { name: "Sequelize" },
     { name: "TypeORM" },
     { name: "Prisma" },
+    { name: "GORM" },
   ],
   guiTools: [{ name: "TablePlus" }],
   container: [{ name: "Docker" }],
@@ -71,7 +70,7 @@ export const workExperiences = [
     company: "Remobie Technologies Co., Ltd.",
     companyUrl: "https://th.remobie.com",
     details: [
-      "Design and develop RESTful APIs for Service-Center to manage parts for Samsung product repair using Nestjs, TypeORM and Postgresql.",
+      "Led the design and develop backend clean achitechure for Service Order System using Nestjs, TypeORM and Postgresql.",
       "Develop and maintain Trade-in service are Trade-in and Admin for manage orders system using Next.js, Node.js (Express.js), Sequelize, Firebase (Realtime Database) and Postgresql.",
       "Design, develop and maintain company's website, improving SEO, multi-locale support and partner campaign support using Next.js",
       "Design and develop Trade-in member a LINE LIFF-based for point of member using Next.js",
@@ -79,7 +78,6 @@ export const workExperiences = [
       "Develop a Trade-in mobile application from a Trade-in website with Expo and publish it on both iOS and Android stores.",
       "Implement e2e testing for critical application workflows, increasing test coverage and improving overall software quality.",
       "Collaborate with DevOps teams to conduct load testing server and database using k6 before campaign lauch.",
-      "Conduct code reviews and mentorship, promoting clean code practices and maintaining code quality across the team.",
     ],
     periods: {
       start: { year: 2024, month: "Feb" },
