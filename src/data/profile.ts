@@ -11,57 +11,53 @@ export const intro = {
     "https://www.linkedin.com/in/noppawat-chochaipantawong-659180214",
   githubUrl: "https://github.com/Noppawat3939",
   introduce: `
-  Software Engineer with ${exp} years of experience working with JavaScript and TypeScript, focused on designing and developing features, fixing issues, and delivering user-focused solutions. I’m passionate about using technology to solve real-world problems and creating products that make a meaningful impact.
+  Software Engineer with ${exp} years of experience working with JavaScript and TypeScript, I’m passionate about using technology to solve real-world problems and creating products that make a meaningful impact.
   `,
 };
 
-export const technologies = {
-  design: [
-    { name: "Canva" },
-    { name: "Whimsical" },
-    { name: "Figma" },
-    { name: "DrawSQL" },
-    { name: "Miro" },
-  ],
-  language: [
-    { name: "Javascript" },
-    { name: "Typescript" },
-    { name: "HTML" },
-    { name: "CSS" },
-    { name: "Less CSS" },
-    { name: "Go" },
-  ],
-  frameworkProgramming: [
-    { name: "Next.js" },
-    { name: "React Native" },
-    { name: "Expo" },
-    { name: "Express" },
-    { name: "NestJS" },
-    { name: "Fiber" },
-  ],
-  javascriptLibrary: [{ name: "React" }, { name: "Socket.IO" }],
-  cssFramework: [{ name: "Tailwind CSS" }],
-  cssLibrary: [{ name: "Ant Design" }, { name: "NextUI" }],
-  database: [{ name: "PostgreSQL" }, { name: "MongoDB" }, { name: "Redis" }],
-  objectDataModeling: [{ name: "Mongoose" }],
-  objectRelationalMapping: [
-    { name: "Sequelize" },
-    { name: "TypeORM" },
-    { name: "Prisma" },
-    { name: "GORM" },
-  ],
-  guiTools: [{ name: "TablePlus" }],
-  container: [{ name: "Docker" }],
-  others: [
-    { name: "Postman" },
-    { name: "GCP" },
-    { name: "AWS" },
-    { name: "Firebase" },
-    { name: "Cloudinary" },
-    { name: "Github Actions" },
-    { name: "Vercel" },
-  ],
-};
+export const skills = [
+  {
+    label: "Programming lanuages",
+    values: ["HTML", "CSS", "Javascript", "Typescript", "Go"],
+  },
+  {
+    label: "Frameworks & Libraries (Frontend)",
+    values: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "Tailwind CSS",
+      "Ant Design",
+    ],
+  },
+  {
+    label: "Frameworks & Libraries (Backend)",
+    values: ["Express", "NestJS", "Fiber", "Socket.IO"],
+  },
+  { label: "Databases & Caching", values: ["PostgreSQL", "MongoDB", "Redis"] },
+  {
+    label: "ORMs & ODMs",
+    values: ["Sequelize", "TypeORM", "Prisma", "Mongoose", "GORM"],
+  },
+  {
+    label: "DevOps & Cloud Platforms",
+    values: ["Docker", "GCP", "AWS", "Firebase", "Vercel", "Github actions"],
+  },
+  {
+    label: "Design & Collaboration",
+    values: [
+      "Canva",
+      "Whimsical",
+      "Figma",
+      "Miro",
+      "DrawSQL",
+      "DBDiagram.io",
+      "Jira",
+    ],
+  },
+  { label: "Tools", values: ["Postman", "TablePlus", "Google sheets"] },
+];
 
 export const workExperiences = [
   {
@@ -113,33 +109,6 @@ export const workExperiences = [
       end: { year: 2021, month: "Nov" },
     },
   },
-  // {
-  //   isFullTime: false,
-  //   position: "Digital Marketing",
-  //   company: "Refinn International Dot Com Co., Ltd.",
-  //   companyUrl: "https://www.refinn.com",
-  //   details: [
-  //     "Wrote an article about home loans personal loan car loan and refinancing to support SEO.",
-  //   ],
-  //   periods: {
-  //     start: { year: 2021, month: "Apr" },
-  //     end: { year: 2021, month: "May" },
-  //   },
-  // },
-  // {
-  //   isFullTime: false,
-  //   position: "Talent Acquistion",
-  //   company: "Teach For Thailand",
-  //   companyUrl: "https://www.teachforthailand.org",
-  //   details: [
-  //     "Contacted and coordinated candidate for Leadership Program (cohort 7).",
-  //     "Co-created and produced marketing videos on the facebook page.",
-  //   ],
-  //   periods: {
-  //     start: { year: 2020, month: "Mar" },
-  //     end: { year: 2020, month: "May" },
-  //   },
-  // },
 ];
 
 export const projects = [

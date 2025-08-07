@@ -1,54 +1,21 @@
 import * as d from "@/data/profile";
-import { concatSkill as cs } from "@/helper";
 
-interface ISkills {
-  label: string;
-  details: string[];
-}
-
-const { technologies: tech, language: lang } = d;
+const { skills } = d;
 
 export default function ContentSkill() {
-  const skills: ISkills[] = [
-    {
-      label: "Programming languages",
-      details: cs(tech.language),
-    },
-    {
-      label: "Framework",
-      details: cs(
-        tech.frameworkProgramming,
-        tech.javascriptLibrary,
-        tech.cssFramework,
-        tech.cssLibrary
-      ),
-    },
-    {
-      label: "Database and ORM",
-      details: cs(
-        tech.database,
-        tech.objectDataModeling,
-        tech.objectRelationalMapping
-      ),
-    },
-    {
-      label: "Others",
-      details: cs(tech.others, tech.container, tech.design, tech.guiTools),
-    },
-    {
-      label: "Languages",
-      details: lang.map((item) => `${item.name} - ${item.details.join(" ")}`),
-    },
-  ];
-
   return (
     <div aria-label="skills_content">
-      {skills.map(({ label, details }, i) => (
-        <li
-          key={`skill-${i}`}
-          className="max-md:text-sm max-sm:text-[9px] max-sm:leading-[14px]"
-        >{`${label}: ${details.join(", ")}`}</li>
-      ))}
+      <div className="max-md:text-sm max-sm:text-[9px] max-sm:gap-1 max-sm:leading-[15px]">
+        {skills.map(({ label, values }, i) => (
+          <li
+            className="flex w-full flex-wrap sm:space-x-3 max-sm:gap-y-1 max-sm:items-start"
+            key={`skill-${i}`}
+          >
+            <span className="max-sm:mr-1">{`${label}:`}</span>
+            <span>{values.join(", ")}</span>
+          </li>
+        ))}
+      </div>
     </div>
   );
 }
