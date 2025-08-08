@@ -30,7 +30,7 @@ export default function ContentProject() {
         ) => (
           <div
             key={`project-${i}`}
-            className="flex justify-between items-start max-md:text-sm max-sm:text-[9px] max-sm:leading-[14px]"
+            className="flex justify-between items-start max-md:text-sm max-sm:text-[8px] max-sm:leading-[14px]"
           >
             <li aria-label="project_name" className="mr-2">
               <span>

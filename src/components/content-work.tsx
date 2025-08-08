@@ -20,18 +20,19 @@ export default function ContentWork() {
           >
             <header
               aria-label="work-header"
-              className="flex justify-between items-end max-sm:items-center"
+              className="flex justify-between items-end max-sm:items-center max-sm:pb-0"
             >
               <div className="font-semibold flex space-x-1 items-baseline mb-1 max-md:text-sm max-sm:text-[10px]">
+                <p>{position}</p>
+                <p className="max-sm:hidden">|</p>
                 <Link
                   rel="noreferrer nofollow"
                   target="_blank"
+                  className="max-sm:hidden"
                   href={companyUrl}
                 >
                   {company}
                 </Link>
-                <p>|</p>
-                <p>{position}</p>
               </div>
               <p
                 className="text-sm max-sm:text-[8px] max-sm:leading-3"
@@ -40,10 +41,20 @@ export default function ContentWork() {
                 end.current ? "Present" : `${end.month} ${end.year}`
               }`}</p>
             </header>
+            <i className="hidden max-sm:flex">
+              <Link
+                rel="noreferrer nofollow"
+                target="_blank"
+                className="text-gray-800 max-sm:text-[8px] opacity-65"
+                href={companyUrl}
+              >
+                {company}
+              </Link>
+            </i>
             {details.map((detail, i) => (
               <li
                 key={`detail-w-${i}`}
-                className="max-w-[90%] max-md:text-sm max-sm:text-[9px] max-sm:leading-[14px] max-sm:max-w-[95%]"
+                className="max-w-[90%] max-md:text-sm max-sm:text-[8px] max-sm:leading-[14px] max-sm:max-w-[95%]"
               >
                 {detail}
               </li>

@@ -21,7 +21,7 @@ export default function ContentEducation() {
           </li>
           <p
             aria-label="university"
-            className="text-sm max-sm:text-[9px] max-sm:font-[300] max-sm:leading-4"
+            className="text-sm max-sm:text-[8px] max-sm:font-[300] max-sm:leading-4"
           >
             {university}
           </p>
