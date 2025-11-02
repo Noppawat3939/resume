@@ -34,7 +34,16 @@ export const works: {
     position: "Software engineer",
     company: "Remobie Technologies Company Limited",
     period: "Jan 2024 - Present",
-    tasks: [""],
+    tasks: [
+      "Develop and maintain Service Center and Trade-In web services, covering frontend, backend, and database.",
+      "Design and implement backend APIs, database schemas, and real-time features (NestJS, Express, PostgreSQL, TypeORM, Sequelize, Firebase).",
+      "Maintain and enhance Trade-In admin and order management systems (Next.js, Ant Design) with mobile support.",
+      "Integrate third-party APIs and multiple payment gateways (M-Pay, Shopee Pay Later).",
+      "Lead website redesign and localization, improving user experience for new markets.",
+      "Conduct load testing during campaign periods and collaborate with DevOps.",
+      "Gather requirements, design feature flows, and implement documentation for team knowledge sharing.",
+      "Ensure system reliability, bug fixing, and code quality improvements across all projects.",
+    ],
     hidden: !false,
   },
   {
