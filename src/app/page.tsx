@@ -1,20 +1,38 @@
 "use client";
 
-import {
-  ContentEducation as Education,
-  ContentIntro as Intro,
-  ContentSkill as Skills,
-  ContentWork as Works,
-} from "@/components";
-import { Suspense, lazy } from "react";
+import { Education, Header, Line, Profile, Skill, Work } from "@/components";
+import { Fragment, JSX, Suspense, useMemo } from "react";
 import { usePDF } from "react-to-pdf";
 
-const Wrapper = lazy(() => import("@/components/content-wrapper"));
+type TCompoent = {
+  key: string;
+  component: JSX.Element;
+};
 
 export default function MainPage() {
   const { targetRef, toPDF } = usePDF({
-    filename: "noppawat-chochaipantawong.pdf",
+    filename: "noppawat_chochaipantawong_cv.pdf",
   });
+
+  const memorizedComponents = useMemo<TCompoent[]>(
+    () => [
+      {
+        key: "header",
+        component: <Header />,
+      },
+      {
+        key: "profile",
+        component: <Profile />,
+      },
+      {
+        key: "work",
+        component: <Work />,
+      },
+      { key: "skill", component: <Skill /> },
+      { key: "education", component: <Education /> },
+    ],
+    [targetRef.current]
+  );
 
   return (
     <Suspense>
@@ -22,27 +40,19 @@ export default function MainPage() {
         ref={targetRef}
         className="min-h-dvh max-w-screen-xl mx-auto py-10 px-16 max-lg:py-8 max-lg:px-12 max-sm:py-5 max-sm:px-4"
       >
-        <Intro />
-        <div aria-label="wrap-contents" className="flex flex-col space-y-2">
-          <Wrapper
-            about="work-experiences"
-            title="work experiences"
-            content={<Works />}
-          />
-          <Wrapper about="skills" title="skills" content={<Skills />} />
-          <Wrapper
-            about="education"
-            title="education"
-            content={<Education />}
-          />
-        </div>
+        {memorizedComponents.map(({ component, key }) => (
+          <Fragment key={key}>
+            {component}
+            <Line />
+          </Fragment>
+        ))}
       </div>
-      <footer className="flex justify-center items-center min-h-[80px]">
+      <footer hidden className="flex justify-center items-center min-h-[80px]">
         <button
-          className="text-sm max-sm:text-[8px] opacity-65"
+          className="text-xs max-sm:text-[8px] opacity-65"
           onClick={() => toPDF()}
         >
-          {"Download PDF"}
+          {"PDF version"}
         </button>
       </footer>
     </Suspense>

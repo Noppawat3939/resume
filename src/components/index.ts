@@ -1,6 +1,6 @@
-export { default as ContentWrapper } from "./content-wrapper";
-export { default as ContentIntro } from "./content-intro";
-export { default as ContentSkill } from "./content-skill";
-export { default as ContentEducation } from "./content-education";
-export { default as ContentWork } from "./content-work";
-export { default as ContentProject } from "./content-project";
+export { default as Header } from "./header";
+export { default as Profile } from "./profile";
+export { default as Line } from "./line";
+export { default as Work } from "./work";
+export { default as Skill } from "./skill";
+export { default as Education } from "./education";

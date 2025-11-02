@@ -1,18 +1,18 @@
 {
   "name": "resume",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 3939",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "bump-version": "npm version patch --no-git-tag-version & git add package.json package-lock.json"
   },
   "dependencies": {
-    "next": "15.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^16.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-to-pdf": "^2.0.0",
     "tailwind-merge": "^2.5.5"
   },

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "gopgap.nc",
+  title: "gopgap.npw",
   description: "resume noppawat chochaipantawong",
   keywords: [
     "resume",
