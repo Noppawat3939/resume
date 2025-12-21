@@ -44,7 +44,7 @@ export const works: {
       "Gather requirements, design feature flows, and implement documentation for team knowledge sharing.",
       "Ensure system reliability, bug fixing, and code quality improvements across all projects.",
     ],
-    hidden: !false,
+    hidden: false,
   },
   {
     position: "Frontend developer",
