@@ -19,7 +19,7 @@ export default function MePage() {
           </Code>
         </div>
         <div className="pt-2 text-center mt-10 border-t border-[#627072]">
-          <a className="text-xs" href="/">
+          <a className="text-xs" href="/resume">
             {"Full CV"}
           </a>
         </div>
