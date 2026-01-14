@@ -18,7 +18,7 @@ export default function MePage() {
               className="hover:opacity-60 transition-all duration-200"
               href={`mailto:${header.mail_to}`}
             >
-              {`mail := ${header.mail}`}
+              {`m := ${header.mail}`}
             </a>
             <a
               target="_blank"
@@ -26,7 +26,15 @@ export default function MePage() {
               href={header.github_url}
               className="hover:opacity-60 transition-all duration-200"
             >
-              {"gith := Github.com"}
+              {"g := Github"}
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={header.linked_in_url}
+              className="hover:opacity-60 transition-all duration-200"
+            >
+              {"l := Linkedin"}
             </a>
           </Code>
         </div>

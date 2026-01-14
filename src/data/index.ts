@@ -8,6 +8,8 @@ export const header = {
   address: "bangkok, thailand",
   github_url: "https://github.com/Noppawat3939",
   github: "github.com/Noppawat3939",
+  linked_in_url:
+    "https://www.linkedin.com/in/noppawat-chochaipantawong-659180214",
 };
 
 export const profile = `Enthusiastic Software Engineer with hands-on experience in full-stack web development, specializing in JavaScript, React, Next.js, Node.js (Express/NestJS), and PostgreSQL.
@@ -78,7 +80,7 @@ export const skill = [
   "Frontend: React, React native, Next.js, Tailwind CSS, Ant-design",
   "Backend: Node.js, NestJS, Express, Fiber, Gin Socket.IO",
   "Databases & ORM: PostgreSQL, MongoDB, Redis, Firebase Realtime Database,TypeORM, Sequelize, Prisma, Mongoose, GORM",
-  "Platforms & tools: Jira, GIT, Postman, AWS (S3), Google Cloud Platform, Docker, Tableplus",
   "Design: DBDiagram, DrawSQL, Canvas, Figma, Whimsical",
   "Testing: K6, Jest",
+  "Platforms & tools: Jira, GIT, Postman, AWS (S3), Google Cloud Platform, Docker, Tableplus",
 ];
