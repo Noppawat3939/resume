@@ -3,7 +3,7 @@ import { education as _e } from "@/data";
 export default function Education() {
   return (
     <section aria-label="education-section" className="flex flex-col space-y-2">
-      <p className="max-sm:text-xs">Education</p>
+      <p className="max-sm:text-xs font-bold">Education</p>
       <ul>
         {Object.entries(_e).map(([k, v], i) => (
           <li

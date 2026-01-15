@@ -24,11 +24,11 @@ export default function MainPage() {
         key: "profile",
         component: <Profile />,
       },
+      { key: "skill", component: <Skill /> },
       {
         key: "work",
         component: <Work />,
       },
-      { key: "skill", component: <Skill /> },
       { key: "education", component: <Education /> },
     ],
     [targetRef.current]

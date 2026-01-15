@@ -5,7 +5,7 @@ export default function Work() {
 
   return (
     <section aria-label="works-section" className="flex flex-col space-y-3">
-      <p className="max-sm:text-xs">Work Experiences</p>
+      <p className="max-sm:text-xs font-bold">Work Experiences</p>
       {filteredHidden.map((w, i) => (
         <div key={`work-${i}`}>
           <p className="text-[15px] max-sm:text-[10px]">{`${w.position} - ${w.company}`}</p>
