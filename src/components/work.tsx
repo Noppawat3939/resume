@@ -17,7 +17,7 @@ export default function Work() {
               {w.period}
             </p>
           </i>
-          <ul className="ml-2 flex flex-col">
+          <ul className="ml-2 space-y-1 flex flex-col">
             {w.tasks.map((t, ti) => (
               <li
                 key={`task-${ti}`}
