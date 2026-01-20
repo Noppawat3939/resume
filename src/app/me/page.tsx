@@ -8,7 +8,7 @@ export default function MePage() {
         <div className="pb-2 border-b border-[#627072]">
           <p className="text-center font-medium">
             <span className="text-[#50B7E0]">package</span>
-            <span className="text-white">{" Profile"}</span>
+            <span className="text-white">{" main"}</span>
           </p>
         </div>
         <div className="flex flex-col space-y-4 py-4">
