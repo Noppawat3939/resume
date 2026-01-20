@@ -44,6 +44,7 @@ export const works: {
       "Developed the Admin Global back-office web application from scratch, implementing a real-time FIFO-based order–staff matching system that automatically assigns unassigned orders to available bidder team members, significantly reducing order handling time and improving KPI performance measured in minutes per order, using Next.js and Firebase Realtime Database.",
       "Developed a customer-facing web application for mobile phone inspection and second-hand trade-in, supporting the company’s expansion into the Malaysia market by integrating device grading and pricing APIs, enabling localized and mobile-responsive experiences to attract new trade-in customers, using Next.js.",
       "Developed a member-facing trade-in web application on LINE LIFF, focusing on the frontend to enable users to log in via LINE and redeem points seamlessly within the LINE ecosystem, using Next.js integrated with LINE LIFF.",
+      "Built and deployed a mobile application using React Native (Expo) as a WebView container for Trade-in Platform and Trade-in Member web applications, enabling smooth navigation between applications and managing end-to-end delivery to both Google Play Store and Apple App Store.",
       "Implemented API load testing during quarterly company campaigns, collaborating with DevOps to simulate high-traffic scenarios using k6 and Node.js, and tuning database performance to ensure system stability and reliability under peak loads.",
     ],
     hidden: false,

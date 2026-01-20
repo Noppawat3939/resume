@@ -6,7 +6,10 @@ export default function MePage() {
     <section className="h-screen flex flex-col justify-center items-center bg-[#202224] text-[#F0F1F2]">
       <div className=" max-w-3xl border border-[#627072] px-7 py-4 rounded">
         <div className="pb-2 border-b border-[#627072]">
-          <p className="text-center font-bold">{"< Echo />"}</p>
+          <p className="text-center font-medium">
+            <span className="text-[#50B7E0]">package</span>
+            <span className="text-white">{" Profile"}</span>
+          </p>
         </div>
         <div className="flex flex-col space-y-4 py-4">
           <h2 className="text-[#50B7E0] capitalize font-semibold">
