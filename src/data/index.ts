@@ -18,10 +18,11 @@ Passionate about building reliable backend services, crafting efficient frontend
 
 // Education
 export const education = {
-  degree: "Bachelor’s Degree in Human Resource Management",
-  minor: "Minor in Logistics Management",
   university: "Prince of Songkla University",
   period: "Aug 2015 – May 2019",
+  details: [
+    "Bachelor’s Degree in Human Resource Management and Minor in Logistics Management.",
+  ],
 };
 
 // Work experinces

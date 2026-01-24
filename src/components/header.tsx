@@ -9,7 +9,7 @@ export default function Header() {
       <h1 className="font-bold text-3xl capitalize max-sm:text-xl">
         {_h.full_name}
       </h1>
-      <div className="flex space-x-3 max-sm:flex-col max-sm:space-y-1 max-sm:items-center max-sm:text-xs">
+      <div className="flex space-x-3 max-sm:flex-col max-sm:space-y-1 max-sm:items-center max-sm:text-[8px]">
         <a href={_h.mail_to}>{_h.mail}</a>
         <a target="_blank" rel="noopener noreferrer" href={_h.github_url}>
           {_h.github}

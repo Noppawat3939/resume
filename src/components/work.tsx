@@ -8,7 +8,10 @@ export default function Work() {
       <p className="max-sm:text-xs font-bold">Work Experiences</p>
       {filteredHidden.map((w, i) => (
         <div key={`work-${i}`}>
-          <p className="text-[15px] max-sm:text-[10px]">{`${w.position} - ${w.company}`}</p>
+          <p className="text-[15px max-sm:text-[10px]">
+            <b>{w.company}</b>
+            {` - ${w.position}`}
+          </p>
           <i>
             <p
               aria-label="perioid"
