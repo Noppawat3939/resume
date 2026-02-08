@@ -78,11 +78,11 @@ export const works: {
 
 // Skils
 export const skill = [
-  "Languages: JavaScript, TypeScript, Go, SQL",
+  "Languages: JavaScript, TypeScript, Go",
   "Frontend: React, React native, Next.js, Tailwind CSS, Ant-design",
   "Backend: Node.js, NestJS, Express, Fiber, Gin Socket.IO",
   "Databases & ORM: PostgreSQL, MongoDB, Redis, Firebase Realtime Database,TypeORM, Sequelize, Prisma, Mongoose, GORM",
+  "Platforms & tools: Jira, GIT, Postman, AWS (S3), Google Cloud Platform, Docker, Tableplus",
   "Design: DBDiagram, DrawSQL, Canvas, Figma, Whimsical",
   "Testing: K6, Jest",
-  "Platforms & tools: Jira, GIT, Postman, AWS (S3), Google Cloud Platform, Docker, Tableplus",
 ];
