@@ -4,3 +4,4 @@ export { default as Line } from "./line";
 export { default as Work } from "./work";
 export { default as Skill } from "./skill";
 export { default as Education } from "./education";
+export { default as TypingText } from "./typing-text";
