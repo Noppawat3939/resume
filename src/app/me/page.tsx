@@ -2,33 +2,18 @@ import { TypingText } from "@/components";
 import { header } from "@/data";
 import { type PropsWithChildren, memo } from "react";
 
-type TDayNumber = Readonly<1 | 2 | 3 | 4 | 5 | 6 | 7>;
-
-const mappingThemeColorWithDay = {
-  1: "#FFE52A", // Mon
-  2: "#F472B6", // Tue
-  3: "#3DB6B1", // Wed
-  4: "#FF9644", // Thur
-  5: "#50B7E0", // Fri
-  6: "#9B5DE0", // Sat
-  7: "#FA5C5C", // Sun
-} satisfies Record<TDayNumber, string>;
-
 export default function MePage() {
-  const day = new Date().getDay();
-  const color = mappingThemeColorWithDay[day as TDayNumber];
-
   return (
     <section className="h-screen flex flex-col justify-center items-center bg-[#101010] text-[#F0F1F2]">
       <div className=" max-w-3xl border border-[#627072] px-7 py-4 rounded">
         <div className="pb-2 border-b border-[#627072]">
           <p className="text-center font-medium">
-            <span style={{ color }}>package</span>
+            <span style={{ color: "#50B7E0" }}>package</span>
             <span className="text-white">{" main"}</span>
           </p>
         </div>
         <div className="flex flex-col space-y-4 py-4">
-          <h2 className="capitalize font-semibold" style={{ color }}>
+          <h2 className="capitalize font-semibold" style={{ color: "#50B7E0" }}>
             {header.full_name}
           </h2>
           <TypingText texts={["echo", "Software engineer"]} />
