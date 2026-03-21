@@ -2,7 +2,7 @@ import { TypingText } from "@/components";
 import { header } from "@/data";
 import { type PropsWithChildren, memo } from "react";
 
-export default function MePage() {
+export default function Page() {
   return (
     <section className="h-screen flex flex-col justify-center items-center bg-[#101010] text-[#F0F1F2]">
       <div className=" max-w-3xl border border-[#627072] px-7 py-4 rounded">
