@@ -1,64 +1,68 @@
-import { TypingText } from "@/components";
-import { header } from "@/data";
-import { type PropsWithChildren, memo } from "react";
+import { Terminal } from "@/components/terminal";
+
+function calculateExperience(startDate: Date) {
+  const now = new Date();
+
+  let years = now.getFullYear() - startDate.getFullYear();
+  let months = now.getMonth() - startDate.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return {
+    years,
+    months,
+    totalYears: Math.floor(years + months / 12),
+  };
+}
 
 export default function Page() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center bg-[#101010] text-[#F0F1F2]">
-      <div className=" max-w-3xl border border-[#627072] px-7 py-4 rounded">
-        <div className="pb-2 border-b border-[#627072]">
-          <p className="text-center font-medium">
-            <span style={{ color: "#50B7E0" }}>package</span>
-            <span className="text-white">{" main"}</span>
-          </p>
-        </div>
-        <div className="flex flex-col space-y-4 py-4">
-          <h2 className="capitalize font-semibold" style={{ color: "#50B7E0" }}>
-            {header.full_name}
-          </h2>
-          <TypingText texts={["echo", "Software engineer"]} />
-
-          <Code>
-            <a
-              className="hover:opacity-60 transition-all duration-200"
-              href={`mailto:${header.mail_to}`}
-            >
-              {`m := ${header.mail}`}
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={header.github_url}
-              className="hover:opacity-60 transition-all duration-200"
-            >
-              {"g := Github"}
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={header.linked_in_url}
-              className="hover:opacity-60 transition-all duration-200"
-            >
-              {"l := Linkedin"}
-            </a>
-          </Code>
-        </div>
-        <div className="pt-2 text-center mt-10 border-t border-[#627072] hidden">
-          <a className="text-xs" href="/resume">
-            {"Full CV"}
-          </a>
-        </div>
-      </div>
+    <section className="h-screen flex justify-center items-center bg-black/95">
+      <Terminal
+        commands={[
+          "whoami",
+          "cat profile.txt",
+          "cat experience.txt",
+          "cat skills.txt",
+          "echo $CONTACT",
+        ]}
+        outputs={{
+          0: [
+            "  Noppawat Chochaipantawong (Gopgap)",
+            "  Software Engineer",
+            "  Bangkok",
+          ],
+          1: [
+            `  ${calculateExperience(new Date(2022, 5)).totalYears.toFixed(
+              1
+            )}+ years of experience`,
+            "  Focus on scalable systems & clean architecture",
+          ],
+          2: [
+            "  > Developed and maintained scalable full-stack applications",
+            "  > Designed backend architecture and RESTful APIs",
+            "  > Optimized system performance and database queries",
+            "  > Integrated external services and real-time systems",
+            "  > Delivered reliable production systems in cross-functional teams",
+          ],
+          3: [
+            "  Tech Stack:",
+            "    frontend  → React, Next.js, React Native",
+            "    backend   → Node.js, NestJS, Go",
+            "    database  → PostgreSQL, Redis, Firebase",
+            "    tools     → Docker, AWS, k6",
+          ],
+          4: [
+            "  email   → noppawat3984@gmail.com",
+            "  github  → github.com/Noppawat3939",
+          ],
+        }}
+        delayBetweenCommands={1500}
+        initialDelay={800}
+      />
     </section>
   );
 }
-
-const Code = memo(function ({ children }: PropsWithChildren) {
-  return (
-    <pre
-      className={"bg-[#181818] text-[12px] flex flex-col space-y-2 rounded p-2"}
-    >
-      {children}
-    </pre>
-  );
-});
