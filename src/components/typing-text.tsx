@@ -1,12 +1,14 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 type Props = {
   texts: string[];
+  className?: string;
 };
 
-export default function TypingText({ texts }: Props) {
+export default function TypingText({ texts, className }: Props) {
   const [index, setIndex] = useState(0);
   const [value, setValue] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -43,7 +45,7 @@ export default function TypingText({ texts }: Props) {
   }, [value, isDeleting, text, texts.length]);
 
   return (
-    <span className="flex items-center">
+    <span className={cn("flex items-center", className)}>
       {value}
       <span className="ml-1 animate-blink">|</span>
     </span>

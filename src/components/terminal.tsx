@@ -423,14 +423,11 @@ export function Terminal({
         className
       )}
     >
-      <div className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl">
+      <div
+      // className="overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 shadow-2xl"
+      >
         {/* Title Bar */}
         <div className="flex items-center gap-2 bg-neutral-800 px-2 py-1">
-          <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-red-500 transition-colors hover:bg-red-600" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500 transition-colors hover:bg-yellow-600" />
-            <div className="h-3 w-3 rounded-full bg-green-500 transition-colors hover:bg-green-600" />
-          </div>
           <div className="flex-1 text-center">
             <span className="truncate text-xs text-neutral-400">
               {username} — bash
@@ -442,7 +439,7 @@ export function Terminal({
         {/* Terminal Content */}
         <div
           ref={contentRef}
-          className="no-visible-scrollbar h-80 overflow-y-auto py-1 px-2 font-mono"
+          // className="no-visible-scrollbar h-80 overflow-y-auto py-1 px-2 font-mono"
         >
           {lines.map((line, i) => (
             <div key={i} className="leading-relaxed whitespace-pre-wrap">
