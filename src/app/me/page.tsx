@@ -1,24 +1,5 @@
-import { Terminal } from "@/components/terminal";
 import TypingText from "@/components/typing-text";
-import { PropsWithChildren } from "react";
-
-function calculateExperience(startDate: Date) {
-  const now = new Date();
-
-  let years = now.getFullYear() - startDate.getFullYear();
-  let months = now.getMonth() - startDate.getMonth();
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  return {
-    years,
-    months,
-    totalYears: Math.floor(years + months / 12),
-  };
-}
+import { memo } from "react";
 
 const data = {
   profile: [
@@ -44,48 +25,6 @@ const data = {
 export default function Page() {
   return (
     <section className="min-h-screen bg-[#11111b] w-screen">
-      {/* <Terminal
-        commands={[
-          "whoami",
-          "cat profile.txt",
-          "cat experience.txt",
-          "cat skills.txt",
-          "echo $CONTACT",
-        ]}
-        outputs={{
-          0: [
-            "  Noppawat Chochaipantawong (Gopgap)",
-            "  Software Engineer",
-            "  Bangkok",
-          ],
-          1: [
-            `  ${calculateExperience(new Date(2022, 5)).totalYears.toFixed(
-              1
-            )}+ years of experience`,
-            "  Focus on scalable systems & clean architecture",
-          ],
-          2: [
-            "  > Developed and maintained scalable full-stack applications",
-            "  > Designed backend architecture and RESTful APIs",
-            "  > Optimized system performance and database queries",
-            "  > Integrated external services and real-time systems",
-            "  > Delivered reliable production systems in cross-functional teams",
-          ],
-          3: [
-            "  Tech Stack:",
-            "    frontend  → React, Next.js, React Native",
-            "    backend   → Node.js, NestJS, Go",
-            "    database  → PostgreSQL, Redis, Firebase",
-            "    tools     → Docker, AWS, k6",
-          ],
-          4: [
-            "  email   → noppawat3984@gmail.com",
-            "  github  → github.com/Noppawat3939",
-          ],
-        }}
-        delayBetweenCommands={1500}
-        initialDelay={800}
-      /> */}
       <div className="max-w-5xl max-sm:max-w-xs mx-auto h-full py-12 max-sm:py-8">
         <div className="flex items-baseline space-x-2 mb-4">
           <Header text="WHOAMI" />
@@ -128,26 +67,26 @@ export default function Page() {
   );
 }
 
-function Header(props: { text: string }) {
+const Header = memo(function (props: { text: string }) {
   return (
-    <h1 className="text-[#85c1dc] font-monoIBM font-extrabold text-xl max-sm:text-[16px]">
+    <h1 className="text-[#8caaee] font-monoIBM font-extrabold text-xl max-sm:text-[16px]">
       {props.text}
     </h1>
   );
-}
+});
 
-function Text(props: { text: string }) {
+const Text = memo(function (props: { text: string }) {
   return (
     <p className="text-[#838ba7] font-monoIBM font-bold text-lg max-sm:text-sm">
       {props.text}
     </p>
   );
-}
+});
 
-function Label(props: { text: string }) {
+const Label = memo(function (props: { text: string }) {
   return (
     <p className="text-[#f4b8e4] font-monoIBM font-bold text-lg max-sm:text-sm">
       {props.text}
     </p>
   );
-}
+});
