@@ -11,6 +11,7 @@ const data = {
     "[frontend]: React, Next.js, React Native",
     "[backend]: Express, NestJS, Gin, Fiber",
     "[database]: PostgreSQL, Redis, Firebase, MongoDB",
+    "[testing]: bun:test, go test",
     "[tools]: Docker, AWS, K6, Tableplus",
   ],
   links: [
