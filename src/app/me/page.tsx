@@ -1,190 +1,303 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-// import TypingText from "@/components/typing-text";
-import { memo, useState } from "react";
+import {
+  header as _h,
+  profile as _p,
+  works as _w,
+  skill as _s,
+  education as _e,
+} from "@/data";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { useState, useCallback } from "react";
 
-const data = {
-  profile: [
-    "Enthusiastic Software Engineer with hands-on experience in building scalable web applications and reliable backend systems. Strong understanding of clean architecture, scalable API design, and system reliability. Passionate about turning complex business requirements into clean, maintainable, and high-performance solutions.",
-    "I enjoy solving challenging technical problems, designing robust system flows, and creating smooth user experiences that deliver real value. Continuously learning modern technologies and software design principles, with a strong interest in system scalability, performance optimization, and microservices architecture. I am committed to writing clean, testable code and continuously growing as an engineer.",
-  ],
-  stack: [
-    "[language]: Javascript, Typescript, Go",
-    "[frontend]: React, Next.js, React Native",
-    "[backend]: Express, NestJS, Gin, Fiber",
-    "[database]: PostgreSQL, Redis, Firebase, MongoDB",
-    "[testing]: bun:test, go test",
-    "[tools]: Docker, AWS, K6, Tableplus",
-  ],
-  links: [
-    { label: "GitHub", url: "https://github.com/noppawat3939" },
-    {
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/in/noppawat-chochaipantawong-659180214",
-    },
-  ],
-};
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700"],
+});
 
-/**
- * font - 9aa0a6
- * btn - 8ab4f8
- */
+const NAV_ITEMS = [
+  {
+    id: "about",
+    label: "About",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+      </svg>
+    ),
+  },
+  {
+    id: "experience",
+    label: "Experience",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+      </svg>
+    ),
+  },
+  {
+    id: "skills",
+    label: "Skills",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+  },
+  {
+    id: "education",
+    label: "Education",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+      </svg>
+    ),
+  },
+];
 
 export default function Page() {
-  const router = useRouter();
-  const [show, setShow] = useState(false);
+  const filteredWorks = _w.filter((w) => !w.hidden);
+  const [toast, setToast] = useState<string | null>(null);
+  const [activeNav, setActiveNav] = useState<string>("about");
+
+  const copyToClipboard = useCallback((text: string, label: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setToast(`${label} copied!`);
+      setTimeout(() => setToast(null), 2000);
+    });
+  }, []);
+
+  const scrollToSection = useCallback((id: string) => {
+    setActiveNav(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   return (
-    <section className="min-h-screen flex justify-center items-center bg-[#202124] w-screen">
-      <div
-        className="max-w-[600px] h-[700px] w-full leading-tight text-[#9aa0a6]"
-        aria-label="wrapepr"
-      >
-        <div className="mb-[40px]">
-          <img
-            className="object-contain"
-            loading="lazy"
-            width={72}
-            height={72}
-            style={{ filter: "invert(1)" }}
-            alt="err-img"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABIAQMAAABvIyEEAAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAENJREFUeF7tzbEJACEQRNGBLeAasBCza2lLEGx0CxFGG9hBMDDxRy/72O9FMnIFapGylsu1fgoBdkXfUHLrQgdfrlJN1BdYBjQQm3UAAAAASUVORK5CYII="
-          />
-        </div>
-        <div className="flex flex-col space-y-[15px]">
-          <h2 className="text-[24px] font-bold tracking-tighter">
-            This site can’t be reached
-          </h2>
-          <span className="text-[15px] leading-[1.6em]">
-            <span className="font-[900]">localhost </span>
-            refused to connect.
-          </span>
-          <div className="flex flex-col space-y-1">
-            <p>Try:</p>
-            <ul className="ml-[40px] space-y-1 text-[15px]">
-              <li className="list-disc">Checking the connection</li>
-              <li className="list-disc">
-                <span
-                  className="text-[#8ab4f8] cursor-pointer"
-                  onClick={() => setShow((prev) => !prev)}
-                >
-                  Checking the proxy and the firewall
-                </span>
-              </li>
-            </ul>
+    <main
+      className={`${jakarta.variable} font-[family-name:var(--font-jakarta)] min-h-screen bg-zinc-900 text-zinc-50`}
+    >
+      {/* Toast */}
+      {toast && (
+        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 md:hidden">
+          <div className="bg-zinc-50 text-zinc-900 text-xs font-[family-name:var(--font-geist-mono)] px-4 py-2 rounded-full shadow-lg">
+            {toast}
           </div>
-          <span className="text-xs">ERR_CONNECTION_REFUSED</span>
         </div>
-        <div
-          aria-label="buttons"
-          className="flex justify-between mt-[51px] pb-4"
-        >
-          <button
-            onClick={() => setShow((prev) => !prev)}
-            className="h-[31px] flex items-center justify-center rounded-2xl py-2 px-4 ring-0 text-[#8ab4f8] text-[13px] border border-[#5f6368] transition-all duration-200 hover:bg-[#303339] hover:border-[#80868b]"
-          >
-            {show ? "Hide deatils" : "Details"}
-          </button>
-          <button
-            onClick={() => router.push("/")}
-            className="h-[31px] flex items-center justify-center text-[13px] bg-[#8ab4f8] py-2 px-4 text-[#202124] rounded-2xl ring-0"
-          >
-            Resume
-          </button>
-        </div>
-        {show && (
-          <div className="flex flex-col space-y-6 text-[15px] mt-[15px] mb-[50px]">
-            <div className="flex flex-col space-y-1">
-              <h2 className="font-semibold">Check your internet connection</h2>
-              <p>
-                Check any cables and reboot any routers, modems, or other
-                network devices you may be using.
-              </p>
-            </div>
-            <div className="flex flex-col space-y-1">
-              <h2 className="font-semibold">
-                Allow Chrome to access the network in your firewall or antivirus
-                settings.
-              </h2>
-              <p>
-                If it is already listed as a program allowed to access the
-                network, try removing it from the list and adding it again.
-              </p>
-            </div>
-            <div className="flex flex-col space-y-1">
-              <h2 className="font-semibold">If you use a proxy server…</h2>
-              <p>
-                {
-                  "Go to Applications > System Settings > Network, select the active network, click the Details… button, and deselect any proxies that may have been selected."
-                }
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-      {/* <div className="max-w-5xl max-sm:max-w-xs mx-auto h-full py-12 max-sm:py-8">
-        <div className="flex items-baseline space-x-2 mb-4">
-          <Header text="WHOAMI" />
-          <TypingText
-            texts={["Gopgap", "Noppawat Chochaipantawong"]}
-            className="text-[#b5bfe2] font-sans font-semibold text-xl max-sm:text-[16px]"
-          />
-        </div>
-        <div className="flex flex-col space-y-4">
-          {data.profile.map((p, i) => (
-            <Text text={p} key={`profile-${i}`} />
-          ))}
-        </div>
-        <div className="flex flex-col mt-4">
-          <div className="flex items-center space-x-3">
-            <Label text="tech" />
-            <Text text="~ $ stack" />
-          </div>
-          {data.stack.map((s, i) => (
-            <Text text={s} key={`stack-${i}`} />
-          ))}
-        </div>
-        <div className="flex items-center space-x-3 mt-4 mb-2">
-          <Label text="noppawat3084@gmail.com" />
-          <Text text="~ $ contact" />
-        </div>
-        {data.links.map((l, i) => (
-          <li key={`link-${i}`} className="text-[#838ba7] ml-3">
-            <a
-              className="font-sans font-bold text-lg duration-200 transition-all hover:text-[#ef9f76] max-sm:text-sm"
-              target="_blank"
-              href={l.url}
+      )}
+
+      <div className="max-w-3xl mx-auto px-6 py-14 sm:px-10 md:px-16 md:py-20 pb-28 md:pb-20">
+
+        {/* Header */}
+        <header className="mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-50 capitalize mb-1.5">
+            {_h.full_name}
+          </h1>
+          <p className="font-[family-name:var(--font-geist-mono)] text-sm text-zinc-500 mb-6">
+            Software Engineer · Bangkok, Thailand
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {/* Email — tap to copy on mobile */}
+            <button
+              onClick={() => copyToClipboard(_h.mail, "Email")}
+              className="md:hidden font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 active:bg-zinc-800 transition-colors duration-150"
             >
-              {l.label}
+              {_h.mail}
+            </button>
+            <a
+              href={_h.mail_to}
+              className="hidden md:inline-flex font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 hover:border-zinc-400 hover:text-zinc-50 transition-colors duration-150"
+            >
+              {_h.mail}
             </a>
-          </li>
-        ))}
-      </div> */}
-    </section>
+
+            {/* GitHub — always a link */}
+            <a
+              href={_h.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 hover:border-zinc-400 hover:text-zinc-50 transition-colors duration-150"
+            >
+              {_h.github}
+            </a>
+
+            {/* Phone — tap to copy on mobile */}
+            <button
+              onClick={() => copyToClipboard(_h.phone, "Phone")}
+              className="md:hidden font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 active:bg-zinc-800 transition-colors duration-150"
+            >
+              {_h.phone}
+            </button>
+            <a
+              href={_h.tel_to}
+              className="hidden md:inline-flex font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 hover:border-zinc-400 hover:text-zinc-50 transition-colors duration-150"
+            >
+              {_h.phone}
+            </a>
+          </div>
+        </header>
+
+        <Divider />
+
+        {/* About */}
+        <section id="about" className="mb-12 scroll-mt-6">
+          <SectionLabel text="about" />
+          <p className="text-sm text-zinc-400 leading-relaxed">{_p}</p>
+        </section>
+
+        <Divider />
+
+        {/* Experience */}
+        <section id="experience" className="mb-12 scroll-mt-6">
+          <SectionLabel text="experience" />
+          <div className="space-y-10">
+            {filteredWorks.map((w, i) => (
+              <div key={i} className="flex gap-4">
+                <div className="flex flex-col items-center pt-1">
+                  <span className="w-2 h-2 rounded-full bg-zinc-600 shrink-0" />
+                  {i < filteredWorks.length - 1 && (
+                    <div className="w-px flex-1 bg-zinc-800 mt-2" />
+                  )}
+                </div>
+                <div className="flex-1 pb-2">
+                  <div className="flex flex-wrap justify-between items-baseline gap-x-4 gap-y-0.5 mb-0.5">
+                    <span className="font-semibold text-zinc-50 text-sm">
+                      {w.company}
+                    </span>
+                    <span className="font-[family-name:var(--font-geist-mono)] text-xs text-zinc-500 shrink-0">
+                      {w.startDate} – {w.endDate ?? "Present"}
+                    </span>
+                  </div>
+                  <p className="text-xs text-zinc-500 font-medium mb-2">
+                    {w.position} · {w.location}
+                  </p>
+                  {w.description && (
+                    <p className="text-xs text-zinc-500 leading-relaxed mb-4 border-l-2 border-zinc-700 pl-3">
+                      {w.description}
+                    </p>
+                  )}
+                  <div className="space-y-4">
+                    {w.sections.map((s, si) => (
+                      <div key={si}>
+                        {s.title && (
+                          <p className="font-[family-name:var(--font-geist-mono)] text-[11px] text-zinc-500 uppercase tracking-wide mb-1.5">
+                            {s.title}
+                          </p>
+                        )}
+                        <ul className="space-y-1.5">
+                          {s.tasks.map((t, ti) => (
+                            <li
+                              key={ti}
+                              className="flex gap-2.5 text-xs text-zinc-400 leading-relaxed"
+                            >
+                              <span className="text-zinc-600 shrink-0 mt-0.5 select-none">›</span>
+                              <span>{t}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* Skills */}
+        <section id="skills" className="mb-12 scroll-mt-6">
+          <SectionLabel text="skills" />
+          <div className="space-y-3">
+            {_s.map((s, i) => {
+              const colonIdx = s.indexOf(": ");
+              const category = s.slice(0, colonIdx);
+              const items = s.slice(colonIdx + 2).split(", ");
+              return (
+                <div key={i} className="flex flex-wrap items-start gap-x-4 gap-y-2">
+                  <span className="font-[family-name:var(--font-geist-mono)] text-[11px] text-zinc-500 w-28 shrink-0 pt-0.5 uppercase tracking-wide">
+                    {category}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {items.map((item, ii) => (
+                      <span
+                        key={ii}
+                        className="text-[11px] font-medium bg-zinc-700 text-zinc-50 rounded-full px-2.5 py-0.5 tracking-tight"
+                      >
+                        {item.trim()}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* Education */}
+        <section id="education" className="scroll-mt-6">
+          <SectionLabel text="education" />
+          <div className="flex gap-4">
+            <div className="flex flex-col items-center pt-1">
+              <span className="w-2 h-2 rounded-full bg-zinc-600 shrink-0" />
+            </div>
+            <div>
+              <div className="flex flex-wrap justify-between items-baseline gap-x-4 gap-y-0.5 mb-1">
+                <span className="font-semibold text-zinc-50 text-sm">
+                  {_e.university}
+                </span>
+                <span className="font-[family-name:var(--font-geist-mono)] text-xs text-zinc-500 shrink-0">
+                  {_e.period}
+                </span>
+              </div>
+              {_e.details.map((d, i) => (
+                <p key={i} className="text-xs text-zinc-400 leading-relaxed">
+                  {d}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      {/* Bottom Navigation — mobile only */}
+      <nav className="fixed bottom-0 left-0 right-0 md:hidden bg-zinc-900/90 backdrop-blur-md border-t border-zinc-800 z-40">
+        <div className="flex items-center justify-around px-2 py-2 max-w-sm mx-auto">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-xl transition-colors duration-150 ${
+                activeNav === item.id ? "text-zinc-50" : "text-zinc-600"
+              }`}
+            >
+              {item.icon}
+              <span className="font-[family-name:var(--font-geist-mono)] text-[10px] tracking-wide">
+                {item.label}
+              </span>
+            </button>
+          ))}
+        </div>
+      </nav>
+    </main>
   );
 }
 
-const Header = memo(function (props: { text: string }) {
+function SectionLabel({ text }: { text: string }) {
   return (
-    <h1 className="text-[#8caaee] font-sans font-extrabold text-xl max-sm:text-[16px]">
-      {props.text}
-    </h1>
-  );
-});
-
-const Text = memo(function (props: { text: string }) {
-  return (
-    <p className="text-[#838ba7] font-sans font-bold text-lg max-sm:text-sm">
-      {props.text}
+    <p className="font-[family-name:var(--font-geist-mono)] text-[11px] uppercase tracking-widest text-zinc-500 mb-5">
+      {text}
     </p>
   );
-});
+}
 
-const Label = memo(function (props: { text: string }) {
-  return (
-    <p className="text-[#f4b8e4] font-sans font-bold text-lg max-sm:text-sm">
-      {props.text}
-    </p>
-  );
-});
+function Divider() {
+  return <hr className="border-zinc-800 mb-12" />;
+}
