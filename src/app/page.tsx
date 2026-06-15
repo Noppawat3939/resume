@@ -32,13 +32,19 @@ export default function Page() {
   return (
     <Suspense>
       <div className="min-h-dvh max-w-[794px] mx-auto py-10 px-16 max-lg:py-8 max-lg:px-12 max-sm:py-5 max-sm:px-4">
-        {memorizedComponents.map(({ component, key }) => (
+        {memorizedComponents.map(({ component, key }, idx) => (
           <Fragment key={key}>
             {component}
-            <Line />
+            {idx < memorizedComponents.length - 1 && <Line />}
           </Fragment>
         ))}
       </div>
+      <button
+        onClick={() => window.print()}
+        className="print:hidden fixed bottom-6 right-6 bg-black text-white text-sm px-4 py-2 rounded-md shadow-md hover:bg-gray-800"
+      >
+        Download PDF
+      </button>
     </Suspense>
   );
 }
