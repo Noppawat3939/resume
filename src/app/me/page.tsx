@@ -21,7 +21,16 @@ const NAV_ITEMS = [
     id: "about",
     label: "About",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <circle cx="12" cy="8" r="4" />
         <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
       </svg>
@@ -31,7 +40,16 @@ const NAV_ITEMS = [
     id: "experience",
     label: "Experience",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="2" y="7" width="20" height="14" rx="2" />
         <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
       </svg>
@@ -41,7 +59,16 @@ const NAV_ITEMS = [
     id: "skills",
     label: "Skills",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <polyline points="16 18 22 12 16 6" />
         <polyline points="8 6 2 12 8 18" />
       </svg>
@@ -51,7 +78,16 @@ const NAV_ITEMS = [
     id: "education",
     label: "Education",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
         <path d="M6 12v5c3 3 9 3 12 0v-5" />
       </svg>
@@ -73,7 +109,9 @@ export default function Page() {
 
   const scrollToSection = useCallback((id: string) => {
     setActiveNav(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   return (
@@ -90,7 +128,6 @@ export default function Page() {
       )}
 
       <div className="max-w-3xl mx-auto px-6 py-14 sm:px-10 md:px-16 md:py-20 pb-28 md:pb-20">
-
         {/* Header */}
         <header className="mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-50 capitalize mb-1.5">
@@ -121,21 +158,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 hover:border-zinc-400 hover:text-zinc-50 transition-colors duration-150"
             >
-              {_h.github}
-            </a>
-
-            {/* Phone — tap to copy on mobile */}
-            <button
-              onClick={() => copyToClipboard(_h.phone, "Phone")}
-              className="md:hidden font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 active:bg-zinc-800 transition-colors duration-150"
-            >
-              {_h.phone}
-            </button>
-            <a
-              href={_h.tel_to}
-              className="hidden md:inline-flex font-[family-name:var(--font-geist-mono)] text-xs text-zinc-400 border border-zinc-700 rounded-md px-3 py-1.5 hover:border-zinc-400 hover:text-zinc-50 transition-colors duration-150"
-            >
-              {_h.phone}
+              Github.com
             </a>
           </div>
         </header>
@@ -193,7 +216,9 @@ export default function Page() {
                               key={ti}
                               className="flex gap-2.5 text-xs text-zinc-400 leading-relaxed"
                             >
-                              <span className="text-zinc-600 shrink-0 mt-0.5 select-none">›</span>
+                              <span className="text-zinc-600 shrink-0 mt-0.5 select-none">
+                                ›
+                              </span>
                               <span>{t}</span>
                             </li>
                           ))}
@@ -218,7 +243,10 @@ export default function Page() {
               const category = s.slice(0, colonIdx);
               const items = s.slice(colonIdx + 2).split(", ");
               return (
-                <div key={i} className="flex flex-wrap items-start gap-x-4 gap-y-2">
+                <div
+                  key={i}
+                  className="flex flex-wrap items-start gap-x-4 gap-y-2"
+                >
                   <span className="font-[family-name:var(--font-geist-mono)] text-[11px] text-zinc-500 w-28 shrink-0 pt-0.5 uppercase tracking-wide">
                     {category}
                   </span>
@@ -264,7 +292,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-
       </div>
 
       {/* Bottom Navigation — mobile only */}
