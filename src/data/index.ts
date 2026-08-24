@@ -55,7 +55,7 @@ export const works: {
         ],
       },
       {
-        title: "Trade-in Platform (Branch-facing)",
+        title: "Trade-in Platform",
         tasks: [
           "Developed order creation flow for multiple device types (smartphones, tablets, computers) with custom features — image annotation & marker tool and model-specific photo upload.",
           "Integrated M-Pay and ShopeePay Later payment gateways across frontend and partial backend, including a deposit flow that secured transactions upfront and saw significantly higher usage during campaign periods.",
@@ -127,7 +127,7 @@ export const skill = [
   "Frontend: React, React Native, Next.js, Tailwind CSS, Ant Design",
   "Backend: Node.js, NestJS, Express, Socket.IO",
   "Databases & ORM: PostgreSQL, Redis, Firebase Realtime Database, TypeORM, Sequelize, Prisma",
-  "Platforms & tools: Lark, Jira, Git, Postman, AWS (S3, CloudWatch), Docker, TablePlus, Obsidian",
+  "Platforms & tools: Lark, Jira, Git, Postman, AWS, Docker, TablePlus, Obsidian",
   "Design: DBDiagram, DrawSQL, Figma, Whimsical, Canvas",
   "Testing: Playwright, Jest, K6",
   "AI Tools: Claude, ChatGPT, Gemini",

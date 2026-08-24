@@ -9,7 +9,7 @@ Remobie operates a second-hand electronics trade-in platform (TH & MY), connecti
 - Built the Payment & Financial System supporting multi-channel customer payouts, partner payments, and a commission calculation engine with financial reporting for the accounting team.
 - Developed partner-integration APIs following external specifications, and coordinated cross-company staging tests prior to production releases.
 
-##### Trade-in Platform (Branch-facing)
+##### Trade-in Platform
 
 - Developed order creation flow for multiple device types (smartphones, tablets, computers) with custom features — image annotation & marker tool and model-specific photo upload.
 - Integrated M-Pay and ShopeePay Later payment gateways across frontend and partial backend, including a deposit flow that secured transactions upfront and saw significantly higher usage during campaign periods.
