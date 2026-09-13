@@ -29,7 +29,7 @@ body {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
     font-size: 10px;
-    line-height: 1.28;
+    line-height: 1.4;
   }
 
   /* Container: kill page padding + max-width so content uses full page */
@@ -39,25 +39,25 @@ body {
     min-height: 0 !important;
   }
 
-  /* Tighten the divider lines */
+  /* Divider lines */
   [aria-label="line"] {
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
     height: 1px !important;
   }
 
-  /* Tighten section internal spacing */
+  /* Section internal spacing */
   section.flex.flex-col.space-y-2 > * + *,
   section.flex.flex-col.space-y-4 > * + *,
   section.flex.flex-col.space-y-5 > * + * {
-    margin-top: 3px !important;
+    margin-top: 4px !important;
   }
 
-  /* Shrink heading + body text inside work/skill/edu */
+  /* Heading + body text inside work/skill/edu */
   section p,
   section li {
     font-size: 10px !important;
-    line-height: 1.28 !important;
+    line-height: 1.4 !important;
   }
   section .text-\[14px\],
   section .text-\[15px\] {
@@ -71,12 +71,12 @@ body {
     font-size: 17px !important;
   }
 
-  /* Tighten bullet list spacing */
+  /* Bullet list spacing */
   section ul {
     margin-left: 6px !important;
   }
   section ul > li + li {
-    margin-top: 1.5px !important;
+    margin-top: 2px !important;
   }
 
   /* Force everything onto one page — let content cascade naturally */

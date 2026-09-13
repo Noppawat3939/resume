@@ -49,38 +49,40 @@ export const works: {
       {
         title: "Admin System (Backoffice — TH & MY)",
         tasks: [
-          "Designed and built end-to-end Warehouse & Inventory Management — inbound/outbound scanning, item registration, and full audit logging.",
-          "Built the Payment & Financial System supporting multi-channel customer payouts, partner payments, and a commission calculation engine with financial reporting for the accounting team.",
-          "Developed partner-integration APIs following external specifications, and coordinated cross-company staging tests prior to production releases.",
+          "Designed and built Warehouse & Inventory Management — inbound/outbound scanning, item registration, and audit logging.",
+          "Built the Payment & Financial System — multi-channel payouts, partner payments, and a commission engine with financial reporting for accounting.",
+          "Developed partner-integration APIs to external specs and coordinated cross-company staging tests before production releases.",
         ],
       },
       {
         title: "Trade-in Platform",
         tasks: [
-          "Developed order creation flow for multiple device types (smartphones, tablets, computers) with custom features — image annotation & marker tool and model-specific photo upload.",
-          "Integrated M-Pay and ShopeePay Later payment gateways across frontend and partial backend, including a deposit flow that secured transactions upfront and saw significantly higher usage during campaign periods.",
+          "Built the order creation flow for smartphones, tablets, and computers with custom image annotation/marker and model-specific photo-upload tools.",
+          "Integrated M-Pay and ShopeePay Later gateways (frontend + partial backend), including a deposit flow that secured transactions upfront and saw higher usage during campaigns.",
+          "Owned a standalone widget (dedicated repo, script-tag embed) delivering real-time iPhone 18 trade-in pricing on AIS's site — built the responsive frontend and a Redis-cached, partner-restricted API, Remobie's first in-partner-site pricing integration.",
+          "Designed and built an Apple Wallet & Google Wallet digital pass feature end-to-end — including the Pre-trade reservation flow and pass signing/certificates across all environments — giving customers a scannable in-store pass during high-demand pre-order launches (e.g., iPhone).",
         ],
       },
       {
         title: "Admin-Global (Multi-country assessment platform — TH & MY)",
         tasks: [
-          "Built the Matching Order system (FIFO + configurable business rules) that automatically assigns orders to available assessors, eliminating manual order selection.",
+          "Built the Matching Order system (FIFO + configurable rules), automatically assigning orders to available assessors and eliminating manual selection.",
           "Developed User Management with role-based access control across all platforms and countries.",
-          "Built an Order Simulator for pre-campaign staff training — configurable bulk order generation to realistically simulate high-traffic conditions (tens of thousands of orders/day).",
+          "Built an Order Simulator for pre-campaign training — configurable bulk order generation simulating high-traffic conditions (tens of thousands of orders/day).",
         ],
       },
       {
         title: "Customer Website & Mobile App",
         tasks: [
           "Built an SEO-optimized customer-facing trade-in website with self-assessment, appointment booking, and campaign trade-toward-purchase features.",
-          "Built a React Native (Expo) WebView mobile application for branch staff with bidirectional native↔web communication to speed up in-store customer service.",
+          "Built a React Native (Expo) WebView app for branch staff with bidirectional native↔web communication, speeding up in-store service.",
         ],
       },
       {
         title: "Operations & Tooling",
         tasks: [
-          "Embedded AI tools across the full development lifecycle — requirements grooming, planning, documentation, acceptance criteria, test cases, and code review.",
-          "Investigated production issues using AWS CloudWatch logs to identify root causes and support incident resolution.",
+          "Investigated production incidents (internal & partner-integration APIs) via CloudWatch Logs/Logs Insights and Postman reproduction, validating root causes with the team before shipping fixes.",
+          "Root-caused a stuck order-status bug to a race condition — in-flight Redis consumer messages were dropped when a pod was killed mid-consumption — by correlating pod-lifecycle and consumer logs.",
         ],
       },
     ],
