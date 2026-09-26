@@ -3,34 +3,15 @@
 Software Engineer · Bangkok, Thailand [Jan 2024 – Present]
 Remobie operates a second-hand electronics trade-in platform (TH & MY), connecting retail branches with a remote assessment team through a warehouse and payment pipeline.
 
-##### Admin System (Backoffice — TH & MY)
-
-- Designed and built Warehouse & Inventory Management — inbound/outbound scanning, item registration, and audit logging.
-- Built the Payment & Financial System — multi-channel payouts, partner payments, and a commission engine with financial reporting for accounting.
-- Developed partner-integration APIs to external specs and coordinated cross-company staging tests before production releases.
-
-##### Trade-in Platform
-
-- Built the order creation flow for smartphones, tablets, and computers with custom image annotation/marker and model-specific photo-upload tools.
-- Integrated M-Pay and ShopeePay Later gateways (frontend + partial backend), including a deposit flow that secured transactions upfront and saw higher usage during campaigns.
-- Owned a standalone widget (dedicated repo, script-tag embed) delivering real-time iPhone 18 trade-in pricing on AIS's site — built the responsive frontend and a Redis-cached, partner-restricted API, Remobie's first in-partner-site pricing integration.
-- Designed and built an Apple Wallet & Google Wallet digital pass feature end-to-end — including the Pre-trade reservation flow and pass signing/certificates across all environments — giving customers a scannable in-store pass during high-demand pre-order launches (e.g., iPhone).
-
-##### Admin-Global (Multi-country assessment platform — TH & MY)
-
-- Built the Matching Order system (FIFO + configurable rules), automatically assigning orders to available assessors and eliminating manual selection.
-- Developed User Management with role-based access control across all platforms and countries.
-- Built an Order Simulator for pre-campaign training — configurable bulk order generation simulating high-traffic conditions (tens of thousands of orders/day).
-
-##### Customer Website & Mobile App
-
-- Built an SEO-optimized customer-facing trade-in website with self-assessment, appointment booking, and campaign trade-toward-purchase features.
-- Built a React Native (Expo) WebView app for branch staff with bidirectional native↔web communication, speeding up in-store service.
-
-##### Operations & Tooling
-
-- Investigated production incidents (internal & partner-integration APIs) via CloudWatch Logs/Logs Insights and Postman reproduction, validating root causes with the team before shipping fixes.
-- Root-caused a stuck order-status bug to a race condition — in-flight Redis consumer messages were dropped when a pod was killed mid-consumption — by correlating pod-lifecycle and consumer logs.
+- Designed and built core backoffice systems — Warehouse & Inventory Management, a multi-channel Payment & Financial System with commission engine, and partner-integration APIs — supporting operations across TH and MY.
+- Built the customer-facing order creation flow (image annotation, model-specific photo upload) and integrated M-Pay / ShopeePay Later payment gateways, including a deposit flow that boosted campaign conversion.
+- Built a standalone pricing widget, embedded on AIS's site (own repo, Redis-cached, partner-restricted API) — Remobie's first in-partner-site integration.
+- Built an Apple/Google Wallet digital pass feature end-to-end, from dev setup through production certificate/signing configuration, giving customers a scannable pre-trade pass during high-demand pre-order launches.
+- Built the Matching Order system (FIFO + rules engine) and an Order Simulator for pre-campaign load testing (10k+ orders/day), plus role-based User Management across all platforms and countries.
+- Built an SEO-optimized customer trade-in website and a React Native (Expo) WebView app for branch staff with native↔web communication.
+- Investigated production incidents across internal and partner-integration APIs via CloudWatch Logs/Logs Insights — including error responses on the return path and on APIs awaiting external webhook callbacks — and drove fixes with the team before production releases.
+- Leveraged AI to clarify ambiguous requirements via stakeholder pain points and codebase tracing, draft implementation plans, and cross-check plans and test cases against requirements for full alignment — plus API specs and user manuals for delivery.
+- Used AI to generate unit tests once requirements and design were confirmed, and to run full reviews before production delivery — reducing miscommunication and rework.
 
 ### Magic Box Solutions
 
