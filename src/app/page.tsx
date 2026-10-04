@@ -1,7 +1,7 @@
 "use client";
 
 import { Education, Header, Line, Profile, Skill, Work } from "@/components";
-import { Fragment, JSX, Suspense, useMemo } from "react";
+import { Fragment, JSX, Suspense, useEffect, useMemo } from "react";
 
 type TCompoent = {
   key: string;
@@ -9,6 +9,11 @@ type TCompoent = {
 };
 
 export default function Page() {
+  // "/?print=1" (used by the "Save as PDF" buttons on /me) opens the print dialog straight away
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has("print")) window.print();
+  }, []);
+
   const memorizedComponents = useMemo<TCompoent[]>(
     () => [
       {
