@@ -1,3 +1,9 @@
+// Logos are imported (not written as "/logos/…" paths) so Next adds the site's basePath to their URLs.
+// Without that, the GitHub Pages site (served under /resume) asks for /logos/… and gets a 404.
+import magicBoxLogo from "~/assets/logos/magic-box-solutions.png";
+import remobieLogo from "~/assets/logos/remobie.svg";
+import teachForThailandLogo from "~/assets/logos/teach-for-thailand.svg";
+
 // Header
 export const header = {
   full_name: "noppawat chochaipantawong",
@@ -46,7 +52,7 @@ export const works: {
     position: "Software Engineer",
     company: "Remobie Technologies Co., Ltd.",
     shortName: "Remobie",
-    logo: { src: "/logos/remobie.svg", width: 100, height: 23 },
+    logo: remobieLogo,
     location: "Bangkok, Thailand",
     startDate: "Jan 2024",
     endDate: null,
@@ -73,7 +79,7 @@ export const works: {
     position: "Frontend Developer",
     company: "Magic Box Solutions",
     shortName: "Magic Box",
-    logo: { src: "/logos/magic-box-solutions.png", width: 1155, height: 420 },
+    logo: magicBoxLogo,
     location: "Bangkok, Thailand",
     startDate: "Jun 2022",
     endDate: "Jan 2024",
@@ -93,7 +99,7 @@ export const works: {
     company: "Teach For Thailand",
     shortName: "Teach For Thailand",
     track: "people",
-    logo: { src: "/logos/teach-for-thailand.svg", width: 257, height: 100 },
+    logo: teachForThailandLogo,
     location: "Thailand",
     startDate: "Aug 2019",
     endDate: "Nov 2021",
