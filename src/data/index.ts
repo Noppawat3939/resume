@@ -17,6 +17,7 @@ export const profile = `Software Engineer with a background in Human Resources M
 // Education
 export const education = {
   university: "Prince of Songkla University",
+  major: "Human Resource Management",
   period: "Aug 2015 – May 2019",
   details: [
     "Bachelor’s Degree in Human Resource Management and Minor in Logistics Management.",
@@ -27,6 +28,10 @@ export const education = {
 export const works: {
   position: string;
   company: string;
+  shortName?: string;
+  logo?: { src: string; width: number; height: number };
+  /** which side of the career pivot this role sits on (default "tech") */
+  track?: "people" | "tech";
   location: string;
   startDate: string;
   endDate: string | null;
@@ -40,6 +45,8 @@ export const works: {
   {
     position: "Software Engineer",
     company: "Remobie Technologies Co., Ltd.",
+    shortName: "Remobie",
+    logo: { src: "/logos/remobie.svg", width: 100, height: 23 },
     location: "Bangkok, Thailand",
     startDate: "Jan 2024",
     endDate: null,
@@ -65,6 +72,8 @@ export const works: {
   {
     position: "Frontend Developer",
     company: "Magic Box Solutions",
+    shortName: "Magic Box",
+    logo: { src: "/logos/magic-box-solutions.png", width: 1155, height: 420 },
     location: "Bangkok, Thailand",
     startDate: "Jun 2022",
     endDate: "Jan 2024",
@@ -82,6 +91,9 @@ export const works: {
   {
     position: "Fellow (Cohort 6)",
     company: "Teach For Thailand",
+    shortName: "Teach For Thailand",
+    track: "people",
+    logo: { src: "/logos/teach-for-thailand.svg", width: 257, height: 100 },
     location: "Thailand",
     startDate: "Aug 2019",
     endDate: "Nov 2021",
@@ -108,3 +120,138 @@ export const skill = [
   "Testing: Playwright, Jest, K6",
   "AI Tools: Claude, ChatGPT, Gemini",
 ];
+
+// /me page — hero, showcase and contact copy (source of truth: src/draft/readme.md)
+export const hero = {
+  lead: "I design, build and ship",
+  words: ["systems.", "websites.", "mobile apps."],
+  // a short version of `profile` (used by the print CV at "/"); no employer named, since Experiences covers that
+  summary: {
+    strong: "Self-taught software engineer",
+    rest: " from an HR background — React, Next.js and Node.js across frontend, backend and mobile.",
+  },
+  proof: {
+    years: "years shipping software",
+    platforms: { value: "3", label: "platforms: web, mobile, backend" },
+    logos: "Worked at",
+  },
+};
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** "Jun 2022" → a month count, so two dates can be subtracted */
+export const monthIndex = (date: string) => {
+  const [m, y] = date.split(" ");
+  return Number(y) * 12 + MONTHS.indexOf(m);
+};
+
+// the hero's "years" figure counts from the first non-people job in `works`
+export const techStart = works
+  .filter((w) => w.track !== "people")
+  .map((w) => w.startDate)
+  .sort((a, b) => monthIndex(a) - monthIndex(b))[0];
+
+export const showcase: {
+  key: string;
+  title: string;
+  from: string;
+  project: string;
+  description: string;
+  sketch: SketchName;
+  alt: string;
+}[] = [
+  {
+    key: "design",
+    title: "Design",
+    from: "How I start",
+    project: "Data first, screens second",
+    description: "Systems, data models and interfaces, planned before the first line of code.",
+    sketch: "model",
+    alt: "ER diagram of a small shop: customers have many orders, each order has many order items, and each item points to a product. Notes: one order has many items; status is a tiny state machine.",
+  },
+  {
+    key: "website",
+    title: "Websites",
+    from: "How I build",
+    project: "Made to be found",
+    description: "Search-friendly websites, taken from design all the way to launch.",
+    sketch: "page",
+    alt: "Wireframe of a web page: logo and menu, a clear headline with one call-to-action button, and a row of three content cards. Notes: real headings and real text, one clear action, sections that scan.",
+  },
+  {
+    key: "mobile",
+    title: "Mobile apps",
+    from: "Who I build for",
+    project: "Customers and staff",
+    description: "Mobile apps for customers and for the staff who serve them.",
+    sketch: "app",
+    alt: "Wireframe of a phone app: a Customer / Staff switch, a list of three items and a bottom tab bar. Notes: two audiences with one design, loading, empty and error states drawn too, thumb-reach navigation.",
+  },
+];
+
+export const contact = {
+  title: "Let's talk.",
+};
+
+// the moment the path changes from people-focused work to software
+export const journey = {
+  pivotLabel: "Self-taught → Tech",
+};
+
+// /me "How I design" strip — sketches redrawn from real work (no client data) and open-source side projects.
+//
+// TO ADD A PROJECT: append an item to a group below (or add a group). Only title, kind and caption are required.
+//   picture, pick one:  sketch: "<name>"  → hand-drawn diagram, add its name to SketchName and draw it in
+//                                           ~/components/me/design-sketches.tsx
+//                       image: {...}      → a screenshot / exported diagram placed in /public
+//                       (neither)         → a text-only card
+//   repo + stack        → adds the "View code" button and the stack line
+// Cards sit two to a row and flow down by themselves; keep `alt` describing what the picture shows.
+export type SketchName = "model" | "page" | "app" | "lock" | "fsm";
+
+export type DesignItem = {
+  title: string;
+  kind: "System design" | "UI design";
+  caption: string;
+  tag?: string;
+  alt?: string;
+  sketch?: SketchName;
+  image?: { src: string; width: number; height: number };
+  stack?: string;
+  repo?: string;
+};
+
+type DesignGroup = { label: string; items: DesignItem[] };
+
+export const designWork: { title: string; groups: DesignGroup[] } = {
+  title: "How I design",
+  groups: [
+    {
+      label: "Side projects · open source",
+      items: [
+        {
+          sketch: "lock",
+          kind: "System design",
+          tag: "Concurrency",
+          title: "Movie check-in service",
+          caption:
+            "Seat booking that stays correct when two people tap the same seat at once.",
+          stack: "Go · Gin · PostgreSQL · Redis",
+          repo: "https://github.com/noppawat3939/movie-check-in-service",
+          alt: "Flow of POST /reservations with three guards against double booking: a Redis SETNX lock per seat, a PostgreSQL SELECT FOR UPDATE row lock, and a unique index on showtime and seat; each guard returns 409 on conflict. On success: commit, release the lock, 201 Created.",
+        },
+        {
+          sketch: "fsm",
+          kind: "System design",
+          tag: "Payments",
+          title: "Card payment service",
+          caption:
+            "Authorize → capture → refund, with idempotency keys so a retry never charges twice.",
+          stack: "Go · PostgreSQL · Redis",
+          repo: "https://github.com/noppawat3939/card-payment-service",
+          alt: "Payment state machine: pending to authorized to captured to refunded; pending can go straight to captured by direct charge, or to failed; authorized can be voided. An idempotency key makes a retry return the stored response instead of charging twice.",
+        },
+      ],
+    },
+  ],
+};

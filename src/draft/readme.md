@@ -27,3 +27,28 @@ Fellow (Cohort 6) · Thailand [Aug 2019 – Nov 2021]
 Teach For Thailand is a non-profit organization committed to creating equitable educational opportunities for children across Thailand.
 
 - Two-year fellowship teaching in an underserved Thai school — planned and delivered lesson plans, managed classroom, and collaborated with teachers and the community to support student development.
+
+---
+
+## /me page — new copy
+
+### Hero
+
+Headline: I design, build and ship **systems.** / **websites.** / **mobile apps.** (last word rotates in step with the showcase)
+
+### Showcase (rotates every ~5.5s)
+
+- **Design** — Systems, data models and interfaces, planned before the first line of code.
+- **Website** — Search-friendly websites, taken from design all the way to launch.
+- **Mobile** — Mobile apps for customers and for the staff who serve them.
+
+### Experience menu (short names)
+
+- Remobie Technologies Co., Ltd. → Remobie
+- Magic Box Solutions → Magic Box
+- Teach For Thailand → Teach For Thailand
+
+### Contact
+
+Eyebrow: Contact
+Title: Let's talk.
