@@ -6,8 +6,9 @@ import { useRafScroll } from "./use-raf-scroll";
 
 const LINKS = [
   { id: "experience", label: "Experiences" },
+  { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
+  { id: "journey", label: "Journey" },
 ];
 
 function brandName(fullName: string) {

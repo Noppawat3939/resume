@@ -2,7 +2,6 @@
 
 import { skill as _s } from "~/data";
 import { useCallback, useEffect, useRef, useState } from "react";
-import HowIDesign from "~/components/me/how-i-design";
 import Reveal from "./reveal";
 import { useRafScroll } from "./use-raf-scroll";
 import { useReducedMotion } from "./use-reduced-motion";
@@ -327,7 +326,6 @@ export default function SkillsBoard() {
             </div>
           ))}
         </div>
-        <HowIDesign />
       </div>
     </section>
   );

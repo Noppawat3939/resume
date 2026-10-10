@@ -30,6 +30,27 @@ export const education = {
   ],
 };
 
+// Remobie bullets, written once: the print CV lists them in this order, /me shows them in `groups`
+const remobieTasks = {
+  backoffice:
+    "Designed and built core backoffice systems — Warehouse & Inventory Management, a multi-channel Payment & Financial System with commission engine, and partner-integration APIs — supporting operations across TH and MY.",
+  orderFlow:
+    "Built the customer-facing order creation flow (image annotation, model-specific photo upload) and integrated M-Pay / ShopeePay Later payment gateways, including a deposit flow that boosted campaign conversion.",
+  aisWidget:
+    "Built a standalone pricing widget, embedded on AIS's site (own repo, Redis-cached, partner-restricted API) — Remobie's first in-partner-site integration.",
+  walletPass:
+    "Built an Apple/Google Wallet digital pass feature end-to-end, from dev setup through production certificate/signing configuration, giving customers a scannable pre-trade pass during high-demand pre-order launches.",
+  matching:
+    "Built the Matching Order system (FIFO + rules engine) and an Order Simulator for pre-campaign load testing (10k+ orders/day), plus role-based User Management across all platforms and countries.",
+  apps: "Built an SEO-optimized customer trade-in website and a React Native (Expo) WebView app for branch staff with native↔web communication.",
+  incidents:
+    "Investigated production incidents across internal and partner-integration APIs via CloudWatch Logs/Logs Insights — including error responses on the return path and on APIs awaiting external webhook callbacks — and drove fixes with the team before production releases.",
+  aiPlanning:
+    "Leveraged AI to clarify ambiguous requirements via stakeholder pain points and codebase tracing, draft implementation plans, and cross-check plans and test cases against requirements for full alignment — plus API specs and user manuals for delivery.",
+  aiTesting:
+    "Used AI to generate unit tests once requirements and design were confirmed, and to run full reviews before production delivery — reducing miscommunication and rework.",
+};
+
 // Work experiences
 export const works: {
   position: string;
@@ -46,6 +67,13 @@ export const works: {
     title?: string;
     tasks: string[];
   }[];
+  /** /me only: short wins shown as chips above the bullets */
+  highlights?: string[];
+  /** /me only: the same tasks as `sections`, regrouped under titles (the print CV ignores this) */
+  groups?: {
+    title: string;
+    tasks: string[];
+  }[];
   hidden?: boolean;
 }[] = [
   {
@@ -58,18 +86,32 @@ export const works: {
     endDate: null,
     description:
       "Remobie operates a second-hand electronics trade-in platform (TH & MY), connecting retail branches with a remote assessment team through a warehouse and payment pipeline.",
-    sections: [
+    sections: [{ tasks: Object.values(remobieTasks) }],
+    highlights: [
+      "Live in TH & MY",
+      "10k+ orders/day load-tested",
+      "First partner-site integration (AIS)",
+    ],
+    groups: [
       {
+        title: "Core platform",
+        tasks: [remobieTasks.backoffice, remobieTasks.matching],
+      },
+      {
+        title: "Customer & partner products",
         tasks: [
-          "Designed and built core backoffice systems — Warehouse & Inventory Management, a multi-channel Payment & Financial System with commission engine, and partner-integration APIs — supporting operations across TH and MY.",
-          "Built the customer-facing order creation flow (image annotation, model-specific photo upload) and integrated M-Pay / ShopeePay Later payment gateways, including a deposit flow that boosted campaign conversion.",
-          "Built a standalone pricing widget, embedded on AIS's site (own repo, Redis-cached, partner-restricted API) — Remobie's first in-partner-site integration.",
-          "Built an Apple/Google Wallet digital pass feature end-to-end, from dev setup through production certificate/signing configuration, giving customers a scannable pre-trade pass during high-demand pre-order launches.",
-          "Built the Matching Order system (FIFO + rules engine) and an Order Simulator for pre-campaign load testing (10k+ orders/day), plus role-based User Management across all platforms and countries.",
-          "Built an SEO-optimized customer trade-in website and a React Native (Expo) WebView app for branch staff with native↔web communication.",
-          "Investigated production incidents across internal and partner-integration APIs via CloudWatch Logs/Logs Insights — including error responses on the return path and on APIs awaiting external webhook callbacks — and drove fixes with the team before production releases.",
-          "Leveraged AI to clarify ambiguous requirements via stakeholder pain points and codebase tracing, draft implementation plans, and cross-check plans and test cases against requirements for full alignment — plus API specs and user manuals for delivery.",
-          "Used AI to generate unit tests once requirements and design were confirmed, and to run full reviews before production delivery — reducing miscommunication and rework.",
+          remobieTasks.orderFlow,
+          remobieTasks.aisWidget,
+          remobieTasks.walletPass,
+          remobieTasks.apps,
+        ],
+      },
+      {
+        title: "Production support & AI workflow",
+        tasks: [
+          remobieTasks.incidents,
+          remobieTasks.aiPlanning,
+          remobieTasks.aiTesting,
         ],
       },
     ],
@@ -122,7 +164,7 @@ export const skill = [
   "Backend: Node.js, NestJS, Express, Socket.IO",
   "Databases & ORM: PostgreSQL, Redis, Firebase Realtime Database, TypeORM, Sequelize, Prisma",
   "Platforms & tools: Lark, Jira, Git, Postman, AWS, Docker, TablePlus, Obsidian",
-  "Design: DBDiagram, DrawSQL, Figma, Whimsical, Canvas",
+  "Design: DBDiagram, DrawSQL, Figma, Whimsical, Canva",
   "Testing: Playwright, Jest, K6",
   "AI Tools: Claude, ChatGPT, Gemini",
 ];
@@ -143,7 +185,20 @@ export const hero = {
   },
 };
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 /** "Jun 2022" → a month count, so two dates can be subtracted */
 export const monthIndex = (date: string) => {
@@ -171,7 +226,8 @@ export const showcase: {
     title: "Design",
     from: "How I start",
     project: "Data first, screens second",
-    description: "Systems, data models and interfaces, planned before the first line of code.",
+    description:
+      "Systems, data models and interfaces, planned before the first line of code.",
     sketch: "model",
     alt: "ER diagram of a small shop: customers have many orders, each order has many order items, and each item points to a product. Notes: one order has many items; status is a tiny state machine.",
   },
@@ -180,7 +236,8 @@ export const showcase: {
     title: "Websites",
     from: "How I build",
     project: "Made to be found",
-    description: "Search-friendly websites, taken from design all the way to launch.",
+    description:
+      "Search-friendly websites, taken from design all the way to launch.",
     sketch: "page",
     alt: "Wireframe of a web page: logo and menu, a clear headline with one call-to-action button, and a row of three content cards. Notes: real headings and real text, one clear action, sections that scan.",
   },
@@ -199,12 +256,15 @@ export const contact = {
   title: "Let's talk.",
 };
 
-// the moment the path changes from people-focused work to software
+// /me "Journey": school and every role on one path; the pivot marks the move from people-focused work to software
 export const journey = {
+  title: "Journey",
+  story:
+    "I studied HR and spent two years teaching with Teach For Thailand before teaching myself to code. The classroom taught me to find the real need behind a request and plan before acting — how I now work through requirements and system design.",
   pivotLabel: "Self-taught → Tech",
 };
 
-// /me "How I design" strip — sketches redrawn from real work (no client data) and open-source side projects.
+// /me "Projects" section — sketches redrawn from real work (no client data) and open-source side projects.
 //
 // TO ADD A PROJECT: append an item to a group below (or add a group). Only title, kind and caption are required.
 //   picture, pick one:  sketch: "<name>"  → hand-drawn diagram, add its name to SketchName and draw it in
@@ -230,7 +290,7 @@ export type DesignItem = {
 type DesignGroup = { label: string; items: DesignItem[] };
 
 export const designWork: { title: string; groups: DesignGroup[] } = {
-  title: "How I design",
+  title: "Projects",
   groups: [
     {
       label: "Side projects · open source",

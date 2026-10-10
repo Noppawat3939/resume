@@ -144,12 +144,13 @@ export default function MeEducation() {
   return (
     <section
       className="sec sec-soft"
-      id="education"
-      aria-labelledby="edu-title"
+      id="journey"
+      aria-labelledby="journey-title"
     >
       <div className="wrap">
         <Reveal className="sec-head">
-          <h2 id="edu-title">Education</h2>
+          <h2 id="journey-title">{_j.title}</h2>
+          <p className="sec-lede">{_j.story}</p>
         </Reveal>
         <Reveal as="article" className="card path-card" onPointerMove={glow}>
           <ol

@@ -95,8 +95,8 @@ export default function Showcase({ index, onChange }: Props) {
               <span className="slide-from">{s.from}</span>
               <strong className="slide-case">{s.project}</strong>
               <p>{s.description}</p>
-              <a className="more-btn slide-more" href="#how-i-design">
-                See how I design <span aria-hidden="true">↓</span>
+              <a className="more-btn slide-more" href="#projects">
+                See projects <span aria-hidden="true">↓</span>
               </a>
             </div>
             <div className="vis sketchy">

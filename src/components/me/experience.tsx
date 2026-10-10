@@ -9,10 +9,37 @@ import { useRafScroll } from "./use-raf-scroll";
 
 const VISIBLE_TASKS = 3;
 
+type Group = { title?: string; tasks: string[] };
+
+// the titled /me groups, plus anything they leave out; without groups, the CV sections as they are
+function groupsOf(w: (typeof _w)[number]): Group[] {
+  if (!w.groups) return w.sections;
+  const rest = w.sections
+    .flatMap((s) => s.tasks)
+    .filter((t) => !w.groups?.some((g) => g.tasks.includes(t)));
+  return rest.length ? [...w.groups, { tasks: rest }] : w.groups;
+}
+
+// the first VISIBLE_TASKS bullets stay on show; a group cut in two carries on, untitled, behind "Show more"
+function split(groups: Group[]) {
+  const visible: Group[] = [];
+  const hidden: Group[] = [];
+  let left = VISIBLE_TASKS;
+  groups.forEach((g) => {
+    const shown = g.tasks.slice(0, left);
+    const rest = g.tasks.slice(left);
+    left -= shown.length;
+    if (shown.length) visible.push({ title: g.title, tasks: shown });
+    if (rest.length)
+      hidden.push({ title: shown.length ? undefined : g.title, tasks: rest });
+  });
+  return { visible, hidden };
+}
+
 const roles = _w
   .filter((w) => !w.hidden)
   .map((w, i) => {
-    const tasks = w.sections.flatMap((s) => s.tasks);
+    const { visible, hidden } = split(groupsOf(w));
     return {
       id: `xp-${i}`,
       company: w.company,
@@ -25,10 +52,25 @@ const roles = _w
       period: `${w.startDate} – ${w.endDate ?? "Present"}`,
       current: w.endDate === null,
       description: w.description,
-      visible: tasks.slice(0, VISIBLE_TASKS),
-      hidden: tasks.slice(VISIBLE_TASKS),
+      highlights: w.highlights,
+      visible,
+      hidden,
+      hiddenCount: hidden.reduce((n, g) => n + g.tasks.length, 0),
     };
   });
+
+function Groups({ groups }: { groups: Group[] }) {
+  return groups.map((g, k) => (
+    <div className="xgroup" key={g.title ?? k}>
+      {g.title && <h4 className="xgroup-title">{g.title}</h4>}
+      <ul className="bullets">
+        {g.tasks.map((t) => (
+          <li key={t}>{t}</li>
+        ))}
+      </ul>
+    </div>
+  ));
+}
 
 function glow(e: React.PointerEvent<HTMLElement>) {
   const el = e.currentTarget;
@@ -66,21 +108,20 @@ function Role({ role }: { role: (typeof roles)[number] }) {
       </header>
       <div className="xbody">
         {role.description && <p className="desc">{role.description}</p>}
-        <div className="xlist">
-          <ul className="bullets">
-            {role.visible.map((t) => (
-              <li key={t}>{t}</li>
+        {role.highlights && (
+          <ul className="xhl" aria-label="Highlights">
+            {role.highlights.map((h) => (
+              <li key={h}>{h}</li>
             ))}
           </ul>
-          {role.hidden.length > 0 && (
+        )}
+        <div className="xlist">
+          <Groups groups={role.visible} />
+          {role.hiddenCount > 0 && (
             <>
               <div className={`more${open ? " open" : ""}`} id={panelId}>
                 <div className="more-inner">
-                  <ul className="bullets">
-                    {role.hidden.map((t) => (
-                      <li key={t}>{t}</li>
-                    ))}
-                  </ul>
+                  <Groups groups={role.hidden} />
                 </div>
               </div>
               <button
@@ -92,7 +133,7 @@ function Role({ role }: { role: (typeof roles)[number] }) {
               >
                 <span className="chev" aria-hidden="true" />
                 <span className="lbl">
-                  {open ? "Show less" : `Show ${role.hidden.length} more`}
+                  {open ? "Show less" : `Show ${role.hiddenCount} more`}
                 </span>
               </button>
             </>
