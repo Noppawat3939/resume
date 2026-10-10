@@ -48,6 +48,26 @@ Headline: I design, build and ship **systems.** / **websites.** / **mobile apps.
 - Magic Box Solutions → Magic Box
 - Teach For Thailand → Teach For Thailand
 
+### Experience — Remobie (/me only; the print CV keeps the flat list above)
+
+Highlights: Live in TH & MY · 10k+ orders/day load-tested · First partner-site integration (AIS)
+
+Groups (bullets are the ones above, regrouped):
+
+- **Core platform** — backoffice systems · Matching Order + Order Simulator + User Management
+- **Customer & partner products** — order creation flow + payment gateways · AIS pricing widget · Apple/Google Wallet pass · SEO website + React Native staff app
+- **Production support & AI workflow** — CloudWatch incident investigation · AI for requirements and plans · AI for unit tests and reviews
+
+### Projects (own section, after Experiences)
+
+Title: Projects
+Group: Side projects · open source (Movie check-in service, Card payment service)
+
+### Journey (was "Education")
+
+Title: Journey
+Story: I studied HR and spent two years teaching with Teach For Thailand before teaching myself to code. The classroom taught me to find the real need behind a request and plan before acting — how I now work through requirements and system design.
+
 ### Contact
 
 Eyebrow: Contact
